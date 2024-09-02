@@ -1,0 +1,78 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "name": "Juliet Oma",
+        "email": "julie@yahoo.com",
+        "number": "08100000000"
+      },
+      {
+        "id": 2,
+        "name": "James Williams",
+        "email": "jameswilly@gmail.com",
+        "number": "08111111111"
+      },
+      {
+        "id": 3,
+        "name": "Ahmed Ali",
+        "email": "ahmedali012@gmail.com",
+        "number": "09022222222"
+      },
+      {
+        "id": 4,
+        "name": "Grace Funsho",
+        "email": "gracefunsho@gmail.com",
+        "number": "09033333333"
+      },
+      {
+        "id": 5,
+        "name": "Ahmed Tala",
+        "email": "ahmedali0dsad12@gmail.com",
+        "number": "09022223322"
+      }
+    ],
+    "categories": [
+        {
+          "id": 1,
+          "name": "Apple iPhone"
+        },
+        {
+          "id": 2,
+          "name": "Apple iPad"
+        },
+        {
+          "id": 3,
+          "name": "Apple iWatch"
+        },
+        {
+          "id": 4,
+          "name": "Apple MacBook"
+        }
+      ],
+      "iPhone": [
+        {
+          "id": 1,
+          "name": "Apple iPhone 15"
+        },
+        {
+          "id": 2,
+          "name": "Apple iPhone 15 Pro"
+        },
+        {
+          "id": 3,
+          "name": "Apple iPhone 15 Pro Max"
+        },
+        {
+            "id": 4,
+            "name": "Apple iPhone 14"
+        },
+        {
+            "id": 5,
+            "name": "Apple iPhone 14 Pro"
+        },
+        {
+            "id": 6,
+            "name": "Apple iPhone 14 Pro Max"
+        }
+      ]
+  }
