@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Header() {
     return (
@@ -8,7 +9,8 @@ function Header() {
             <div className="header__top__line">
               <nav>
                 <ul className="header__nav">
-                  <li><a className="page__menu-link" href="#">О компании</a></li>
+                  <li><Link to="/" className="page__menu-link">Главная</Link></li>
+                  <li><Link to="/about" className="page__menu-link">О компании</Link></li>
                   <li><a className="page__menu-link" href="#">Акции и скидки</a></li>
                   <li><a className="page__menu-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Покупателям</a>
                     <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">

@@ -34,39 +34,109 @@
 	"categories": [
 		{
 			"id": 1,
-			"name": "Apple iPhone"
+			"name": "Apple iPhone",
+			"img": "cat-iphone.webp",
+			"url": "iphone"
 		},
 		{
 			"id": 2,
-			"name": "Apple iPad"
+			"name": "Apple iPad",
+			"img": "cat-ipad.webp",
+			"url": "ipad"
 		},
 		{
 			"id": 3,
-			"name": "Apple iWatch"
+			"name": "Apple iWatch",
+			"img": "cat-iwatch.webp",
+			"url": "iwatch"
 		},
 		{
 			"id": 4,
-			"name": "Apple MacBook"
+			"name": "Apple MacBook",
+			"img": "cat-mac.webp",
+			"url": "macbook"
 		},
 		{
 			"id": 5,
-			"name": "Apple AirPods"
+			"name": "Apple AirPods",
+			"img": "cat-airpods.webp",
+			"url": "airpods"
 		},
 		{
 			"id": 6,
-			"name": "Аксессуары"
+			"name": "Аксессуары",
+			"img": "cat-access.webp",
+			"url": "accessories"
 		},
 		{
 			"id": 7,
-			"name": "Гаджеты"
+			"name": "Гаджеты",
+			"img": "cat-gad.webp",
+			"url": "gadget"
 		}
 	],
-	"iPhone": [
+	"iphone": [
 		{
 			"id": 1,
 			"article": "100100",
 			"name": "Apple iPhone 15",
 			"img": "iphone-15.webp",
+			"label": "Новинка",
+			"oldPrice": 105000,
+			"newPrice": 95000
+		},
+		{
+			"id": 2,
+			"article": "100101",
+			"name": "Apple iPhone 15 Pro",
+			"img": "iphone-15.webp",
+			"label": "Новинка",
+			"oldPrice": 105000,
+			"newPrice": 95000
+		},
+		{
+			"id": 3,
+			"article": "100102",
+			"name": "Apple iPhone 15 Pro Max",
+			"img": "iphone-15.webp",
+			"label": "Новинка",
+			"oldPrice": 105000,
+			"newPrice": 95000
+		},
+		{
+			"id": 4,
+			"article": "100103",
+			"name": "Apple iPhone 14",
+			"img": "iphone-15.webp",
+			"label": "Хит",
+			"oldPrice": 105000,
+			"newPrice": 95000
+		},
+		{
+			"id": 5,
+			"article": "100104",
+			"name": "Apple iPhone 14 Pro",
+			"img": "iphone-15.webp",
+			"label": "Новинка",
+			"oldPrice": 105000,
+			"newPrice": 95000
+		},
+		{
+			"id": 6,
+			"article": "100105",
+			"name": "Apple iPhone 14 Pro Max",
+			"img": "iphone-15.webp",
+			"label": "Новинка",
+			"oldPrice": 105000,
+			"newPrice": 95000
+		}
+	],
+	"ipad": [
+		{
+			"id": 1,
+			"article": "100100",
+			"name": "Apple iPad 11",
+			"img": "ipad_pro_11.webp",
 			"label": "Новинка",
 			"oldPrice": 105000,
 			"newPrice": 95000

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import IPhone from '../../types/Phone';
+import { Link } from 'react-router-dom';
 
 interface CatalogItem {
     item: IPhone
@@ -10,7 +11,6 @@ const CatalogItem: React.FC<CatalogItem> = ({item}) => {
     const [showCounter, setShowCounter] = useState(false)
     const [counterValue, setCounterValue] = useState(1)
 
-    const image = require(`../../assets/img/${item.img}`)
     const sales = Math.floor( 100 - ((item.newPrice * 100) / item.oldPrice) )
 
     function showCounterHandler(): void{
@@ -39,7 +39,9 @@ const CatalogItem: React.FC<CatalogItem> = ({item}) => {
                 </button>
             </div>
             <div className='catalog-item__img'>
-                <img src={image} alt="" />
+                <Link to={`/product/${item.id}`}>
+                    <img src={require(`../../assets/img/${item.img}`)} alt="" />
+                </Link>
             </div>
             <h2 className='catalog-item__title'>{item.name}</h2>
 
