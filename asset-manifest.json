@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/marketplace/static/css/main.fc17788f.css",
-    "main.js": "/marketplace/static/js/main.53ed3f45.js",
+    "main.js": "/marketplace/static/js/main.43b1c6a2.js",
     "static/media/Montserrat-Bold.ttf": "/marketplace/static/media/Montserrat-Bold.2c155811b35513d5beaa.ttf",
     "static/media/Montserrat-Regular.ttf": "/marketplace/static/media/Montserrat-Regular.ceb11275ab638627a643.ttf",
     "static/media/iphone-15.webp": "/marketplace/static/media/iphone-15.ec69b2e3a084dd3750b1.webp",
     "index.html": "/marketplace/index.html",
     "main.fc17788f.css.map": "/marketplace/static/css/main.fc17788f.css.map",
-    "main.53ed3f45.js.map": "/marketplace/static/js/main.53ed3f45.js.map"
+    "main.43b1c6a2.js.map": "/marketplace/static/js/main.43b1c6a2.js.map"
   },
   "entrypoints": [
     "static/css/main.fc17788f.css",
-    "static/js/main.53ed3f45.js"
+    "static/js/main.43b1c6a2.js"
   ]
 }
