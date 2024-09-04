@@ -9,7 +9,7 @@ const PopularItems = () => {
     const [ populerItems, setPopularItems ] = useState([])
 
     useEffect( () => {
-        getPhone( setPopularItems )
+        getPhone( 'iPhone', setPopularItems )
     },[])
 
     return (

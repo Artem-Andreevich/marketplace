@@ -1,6 +1,7 @@
 {
   "name": "marketplace",
   "version": "0.1.0",
+  "homepage": "https://artem-andreevich.github.io/marketplace/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
@@ -22,13 +23,14 @@
     "typescript": "^5.0.3"
   },
   "scripts": {
+    "predeploy": "rm -rf build && npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
-    "watch": "npx json-server --watch db.json --port 3001",
-    "build": "react-scripts build",
+    "watch": "npx json-server --watch ./src/server/db/db.json --port 3001",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "rm -rf build && npm run build",
-    "deploy": "gh-pages -d build"
+    "save-json-api": "node ./src/server/scripts/save-json-api.js",
+    "build": "react-scripts build && npm run save-json-api"
   },
   "eslintConfig": {
     "extends": [
@@ -49,6 +51,7 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^6.1.1"
+    "gh-pages": "^6.1.1",
+    "node-fs": "^0.1.7"
   }
 }
