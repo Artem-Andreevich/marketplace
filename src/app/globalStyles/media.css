@@ -99,6 +99,9 @@
   .aside-grid {
     gap: 40px 60px;
   }
+  .category-item__title {
+    left: 20px;
+  }
 }
 @media (max-width: 1199px) and (min-width: 0px) {
   :root {

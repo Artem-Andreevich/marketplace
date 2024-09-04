@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { getProductsInCategory } from '../../middleware/get-api';
 import IPhone from '../../types/Phone';
 import CatalogItem from '../Catalog-item/CatalogItem';
+import { getProductsByLabel } from '../../middleware/get-api';
 
 
 const PopularItems = () => {
@@ -9,7 +9,9 @@ const PopularItems = () => {
     const [ populerItems, setPopularItems ] = useState([])
 
     useEffect( () => {
-        getProductsInCategory( 'iphone', setPopularItems )
+
+        getProductsByLabel('Хит')
+            .then( products => setPopularItems( products ))
     },[])
 
     return (

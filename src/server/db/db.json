@@ -75,9 +75,10 @@
 			"url": "gadget"
 		}
 	],
-	"iphone": [
+	"products": [
 		{
 			"id": 1,
+			"categoriesID": 1,
 			"article": "100100",
 			"name": "Apple iPhone 15",
 			"img": "iphone-15.webp",
@@ -87,6 +88,7 @@
 		},
 		{
 			"id": 2,
+			"categoriesID": 1,
 			"article": "100101",
 			"name": "Apple iPhone 15 Pro",
 			"img": "iphone-15.webp",
@@ -96,15 +98,17 @@
 		},
 		{
 			"id": 3,
+			"categoriesID": 1,
 			"article": "100102",
 			"name": "Apple iPhone 15 Pro Max",
 			"img": "iphone-15.webp",
-			"label": "Новинка",
+			"label": "Хит",
 			"oldPrice": 105000,
 			"newPrice": 95000
 		},
 		{
 			"id": 4,
+			"categoriesID": 1,
 			"article": "100103",
 			"name": "Apple iPhone 14",
 			"img": "iphone-15.webp",
@@ -114,75 +118,41 @@
 		},
 		{
 			"id": 5,
+			"categoriesID": 1,
 			"article": "100104",
 			"name": "Apple iPhone 14 Pro",
 			"img": "iphone-15.webp",
-			"label": "Новинка",
+			"label": "Хит",
 			"oldPrice": 105000,
 			"newPrice": 95000
 		},
 		{
 			"id": 6,
+			"categoriesID": 1,
 			"article": "100105",
 			"name": "Apple iPhone 14 Pro Max",
 			"img": "iphone-15.webp",
 			"label": "Новинка",
 			"oldPrice": 105000,
 			"newPrice": 95000
-		}
-	],
-	"ipad": [
+		},
 		{
-			"id": 1,
+			"id": 7,
+			"categoriesID": 2,
 			"article": "100100",
 			"name": "Apple iPad 11",
 			"img": "ipad_pro_11.webp",
-			"label": "Новинка",
-			"oldPrice": 105000,
-			"newPrice": 95000
-		},
-		{
-			"id": 2,
-			"article": "100101",
-			"name": "Apple iPhone 15 Pro",
-			"img": "iphone-15.webp",
-			"label": "Новинка",
-			"oldPrice": 105000,
-			"newPrice": 95000
-		},
-		{
-			"id": 3,
-			"article": "100102",
-			"name": "Apple iPhone 15 Pro Max",
-			"img": "iphone-15.webp",
-			"label": "Новинка",
-			"oldPrice": 105000,
-			"newPrice": 95000
-		},
-		{
-			"id": 4,
-			"article": "100103",
-			"name": "Apple iPhone 14",
-			"img": "iphone-15.webp",
 			"label": "Хит",
 			"oldPrice": 105000,
 			"newPrice": 95000
 		},
 		{
-			"id": 5,
-			"article": "100104",
-			"name": "Apple iPhone 14 Pro",
-			"img": "iphone-15.webp",
-			"label": "Новинка",
-			"oldPrice": 105000,
-			"newPrice": 95000
-		},
-		{
-			"id": 6,
-			"article": "100105",
-			"name": "Apple iPhone 14 Pro Max",
-			"img": "iphone-15.webp",
-			"label": "Новинка",
+			"id": 8,
+			"categoriesID": 2,
+			"article": "100101",
+			"name": "Apple iPad 10",
+			"img": "ipad_pro_11.webp",
+			"label": "Хит",
 			"oldPrice": 105000,
 			"newPrice": 95000
 		}

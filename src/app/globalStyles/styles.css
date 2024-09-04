@@ -352,12 +352,13 @@
   background: var(--main-color);
   color: #fff;
 }
-
 .category-item__title {
   position: absolute;
   top: 40px;
   left: 40px;
+  font-size: var(--24-text);
 }
+
 
 
 
@@ -629,4 +630,12 @@
 }
 .counter .icon {
   color: #000;
+}
+
+
+
+.main-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--page-gap);
 }

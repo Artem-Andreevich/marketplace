@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getCategories } from '../../middleware/get-api';
+import { getEndpoints } from '../../middleware/get-api';
 import { Link } from 'react-router-dom';
 
 type Category = {
@@ -14,7 +14,7 @@ const Categories = () => {
     const [categories, setCategories] = useState([])
 
     useEffect( () => {
-        getCategories()
+        getEndpoints('categories')
             .then( data => setCategories(data))
     },[])
 
@@ -25,7 +25,7 @@ const Categories = () => {
                     {categories.map((item: Category) => {
                         return (
                             <li key={item.id} className='category-item'>
-                                <Link to={`/categories/${item.url}`} className='category-item__link'>
+                                <Link to={`/categories/${item.id}`} className='category-item__link'>
                                     <h2 className='category-item__title'>{item.name}</h2>
                                     <img src={require(`../../assets/img/${item.img}`)} className='category-item__pic' alt="" />
                                 </Link>

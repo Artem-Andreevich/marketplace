@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { getProductsInCategory } from '../../middleware/get-api';
+import { getProductsByCategoryID} from '../../middleware/get-api';
 import CatalogItem from '../Catalog-item/CatalogItem';
 
-const CategoriesItems = ({ category }) => {
+const CategoriesItems = ({ categoriesID }) => {
 
     const [ categoryItems, setCategoryItems ] = useState([])
 
     useEffect( () => {
-        getProductsInCategory( category, setCategoryItems )
+        getProductsByCategoryID(categoriesID)
+            .then( products => setCategoryItems( products ))
     },[])
 
     return (
