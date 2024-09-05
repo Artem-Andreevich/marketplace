@@ -1,8 +1,6 @@
-
 import { PopularItems, Categories } from "../components"
 
-
-const MainPage = () => {
+export const MainPage = () => {
     return (
         <main className="page main-page">
             <Categories />
@@ -10,5 +8,3 @@ const MainPage = () => {
         </main>
     );
 };
-
-export default MainPage;

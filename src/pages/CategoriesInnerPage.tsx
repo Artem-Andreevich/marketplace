@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { CategoriesItems, Breadcrumbs } from "../components"
 
-const CategoriesInnerPage = () => {
+export const CategoriesInnerPage = () => {
 
     const { categoryID } = useParams()
 
@@ -14,5 +14,3 @@ const CategoriesInnerPage = () => {
         </main>
     );
 };
-
-export default CategoriesInnerPage;

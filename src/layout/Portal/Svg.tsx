@@ -1,5 +1,4 @@
-
-const Svg = () => {
+export const Svg = () => {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" style={{display:"none"}}>
       <symbol id="phone" viewBox="0 0 0.0404686 0.0404674">
@@ -110,5 +109,3 @@ const Svg = () => {
     </svg>
     );
 };
-
-export default Svg;

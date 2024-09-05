@@ -1,7 +1,7 @@
 import { Breadcrumbs } from "../components"
 
 
-const AboutPage = () => {
+export const AboutPage = () => {
     
     return (
         <main className="page inner-page">
@@ -12,5 +12,3 @@ const AboutPage = () => {
         </main>
     );
 };
-
-export default AboutPage;

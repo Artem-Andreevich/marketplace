@@ -1,10 +1,9 @@
 import { Breadcrumbs } from "../components"
 import { useParams } from 'react-router-dom';
 
-const ProductPage = () => {
+export const ProductPage = () => {
 
     const { productID } = useParams()
-
     console.log(productID)
 
     return (
@@ -16,5 +15,3 @@ const ProductPage = () => {
         </main>
     );
 };
-
-export default ProductPage;

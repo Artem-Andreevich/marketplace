@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useSelector } from "react-redux"
 
 
-function Header() {
+export function Header() {
 
   const cartCount = useSelector(({ cart }) => cart.products.length )
 
@@ -94,6 +94,4 @@ function Header() {
         
       </header>
     );
-}
-
-export default Header;
+};

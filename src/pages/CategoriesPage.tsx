@@ -1,6 +1,6 @@
 import { Categories, Breadcrumbs } from "../components"
 
-const CategoriesPage = () => {
+export const CategoriesPage = () => {
 
     return (
         <main className="page inner-page">
@@ -9,5 +9,3 @@ const CategoriesPage = () => {
         </main>
     );
 };
-
-export default CategoriesPage;
