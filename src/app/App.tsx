@@ -9,7 +9,7 @@ import './globalStyles/reset.css';
 import './globalStyles/styles.css';
 import './globalStyles/media.css';
 
-function App() {
+export function App() {
 	return (
 		<>
 			{createPortal(
@@ -21,6 +21,4 @@ function App() {
 			</Provider>
 		</>
 	);
-}
-
-export default App;
+};
