@@ -275,6 +275,9 @@
   background: var(--main-color-hover);
   border-radius: 50%;
 }
+.control__label:empty {
+  display: none;
+}
 
 
 

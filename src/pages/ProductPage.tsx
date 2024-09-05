@@ -1,5 +1,6 @@
 
 import { useParams } from 'react-router-dom';
+import Breadcrumbs from '../components/Breadcrumbs/Breadcrumbs';
 
 
 const ProductPage = () => {
@@ -10,6 +11,7 @@ const ProductPage = () => {
 
     return (
         <main className="page inner-page">
+            <Breadcrumbs />
             <div className='container'>
                 <h2>Product</h2>
             </div>

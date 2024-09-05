@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import IPhone from '../../types/Phone';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { cartActions } from '../../store/cart';
 
 interface CatalogItem {
     item: IPhone
@@ -8,6 +10,7 @@ interface CatalogItem {
 
 const CatalogItem: React.FC<CatalogItem> = ({item}) => {
     
+    const dispatch = useDispatch()
     const [showCounter, setShowCounter] = useState(false)
     const [counterValue, setCounterValue] = useState(1)
 
@@ -15,6 +18,7 @@ const CatalogItem: React.FC<CatalogItem> = ({item}) => {
 
     function showCounterHandler(): void{
         setShowCounter(prev => !prev)
+        dispatch(cartActions.addToCart(item))
     }
     function incCount(){
         setCounterValue(prev => prev += 1)

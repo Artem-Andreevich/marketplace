@@ -1,7 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector } from "react-redux"
+
 
 function Header() {
+
+  const cartCount = useSelector(({ cart }) => cart.products.length )
+
     return (
 <header className="header">
         <div className="header__top d-none d-lg-block">
@@ -80,7 +85,7 @@ function Header() {
                       <div className="control__icon">
                               <svg className="icon control-icon" width="24px" height="30px">
                                 <use xlinkHref="#basket"></use>
-                              </svg><span className="control__label">6</span>
+                              </svg><span className="control__label">{ cartCount > 0 ? cartCount : null}</span>
                       </div><span>Корзина</span></a></li>
                 </ul>
               </div>
