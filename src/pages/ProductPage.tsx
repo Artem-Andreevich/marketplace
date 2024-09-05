@@ -1,16 +1,13 @@
-import { Breadcrumbs } from "../components"
-import { useParams } from 'react-router-dom';
+import { Breadcrumbs, PopularItems, Product } from "../components"
 
 export const ProductPage = () => {
-
-    const { productID } = useParams()
-    console.log(productID)
 
     return (
         <main className="page inner-page">
             <Breadcrumbs />
             <div className='container'>
-                <h2>Product</h2>
+                <Product />
+                <PopularItems />
             </div>
         </main>
     );

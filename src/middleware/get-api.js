@@ -1,6 +1,18 @@
 
 const URL = "http://localhost:3001"
 
+export async function getProductById(id) {
+    try {
+        const res = await fetch(`${URL}/products`)
+        const data = await res.json()
+        const [ product ] = data.filter( item => item.id == id)
+        return product
+
+    } catch {
+        console.log('Ошибка')
+    }
+}
+
 export async function getProductsByLabel(label) {
     try {
         const res = await fetch(`${URL}/products`)

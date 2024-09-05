@@ -79,7 +79,7 @@
 		{
 			"id": 1,
 			"categoriesID": 1,
-			"article": "100100",
+			"article": "100101",
 			"name": "Apple iPhone 15",
 			"img": "iphone-15.webp",
 			"label": "Новинка",
@@ -89,7 +89,7 @@
 		{
 			"id": 2,
 			"categoriesID": 1,
-			"article": "100101",
+			"article": "100102",
 			"name": "Apple iPhone 15 Pro",
 			"img": "iphone-15.webp",
 			"label": "Новинка",
@@ -99,7 +99,7 @@
 		{
 			"id": 3,
 			"categoriesID": 1,
-			"article": "100102",
+			"article": "100103",
 			"name": "Apple iPhone 15 Pro Max",
 			"img": "iphone-15.webp",
 			"label": "Хит",
@@ -109,7 +109,7 @@
 		{
 			"id": 4,
 			"categoriesID": 1,
-			"article": "100103",
+			"article": "100104",
 			"name": "Apple iPhone 14",
 			"img": "iphone-15.webp",
 			"label": "Хит",
@@ -119,7 +119,7 @@
 		{
 			"id": 5,
 			"categoriesID": 1,
-			"article": "100104",
+			"article": "100105",
 			"name": "Apple iPhone 14 Pro",
 			"img": "iphone-15.webp",
 			"label": "Хит",
@@ -129,7 +129,7 @@
 		{
 			"id": 6,
 			"categoriesID": 1,
-			"article": "100105",
+			"article": "100106",
 			"name": "Apple iPhone 14 Pro Max",
 			"img": "iphone-15.webp",
 			"label": "Новинка",
@@ -139,7 +139,7 @@
 		{
 			"id": 7,
 			"categoriesID": 2,
-			"article": "100100",
+			"article": "100207",
 			"name": "Apple iPad 11",
 			"img": "ipad_pro_11.webp",
 			"label": "Хит",
@@ -149,7 +149,7 @@
 		{
 			"id": 8,
 			"categoriesID": 2,
-			"article": "100101",
+			"article": "100208",
 			"name": "Apple iPad 10",
 			"img": "ipad_pro_11.webp",
 			"label": "Хит",
