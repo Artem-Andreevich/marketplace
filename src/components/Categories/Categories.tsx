@@ -9,7 +9,7 @@ type Category = {
     url: string
 }
 
-const Categories = () => {
+export const Categories = () => {
 
     const [categories, setCategories] = useState([])
     const location = useLocation()
@@ -39,5 +39,3 @@ const Categories = () => {
         </div>
     );
 };
-
-export default Categories;

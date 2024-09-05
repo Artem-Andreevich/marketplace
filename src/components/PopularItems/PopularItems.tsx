@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import IPhone from '../../types/Phone';
-import CatalogItem from '../Catalog-item/CatalogItem';
+import { CatalogItem } from "../index"
 import { getProductsByLabel } from '../../middleware/get-api';
 
 
-const PopularItems = () => {
+export const PopularItems = () => {
 
     const [ populerItems, setPopularItems ] = useState([])
 
@@ -29,5 +29,3 @@ const PopularItems = () => {
         </div>
     );
 };
-
-export default PopularItems;

@@ -8,7 +8,7 @@ interface CatalogItem {
     item: IPhone
 }
 
-const CatalogItem: React.FC<CatalogItem> = ({item}) => {
+export const CatalogItem: React.FC<CatalogItem> = ({item}) => {
     
     const dispatch = useDispatch()
     const [showCounter, setShowCounter] = useState(false)
@@ -86,11 +86,8 @@ const CatalogItem: React.FC<CatalogItem> = ({item}) => {
                             <svg className="icon" width="16px" height="16px"><use xlinkHref="#counter-inc"></use></svg>
                         </button>
                     </div>
-
                 </div>
             </div>
         </div>
     );
 };
-
-export default CatalogItem;

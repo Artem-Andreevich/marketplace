@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getProductsByCategoryID} from '../../middleware/get-api';
-import CatalogItem from '../Catalog-item/CatalogItem';
+import { CatalogItem } from "../index"
 
-const CategoriesItems = ({ categoriesID }) => {
+export const CategoriesItems = ({ categoriesID }) => {
 
     const [ categoryItems, setCategoryItems ] = useState([])
 
@@ -23,5 +23,3 @@ const CategoriesItems = ({ categoriesID }) => {
         </div>
     );
 };
-
-export default CategoriesItems;

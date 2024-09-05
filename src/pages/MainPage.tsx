@@ -1,6 +1,5 @@
 
-import PopularItems from '../components/Popular-items/PopularItems';
-import Categories from '../components/Categories/Categories';
+import { PopularItems, Categories } from "../components"
 
 
 const MainPage = () => {

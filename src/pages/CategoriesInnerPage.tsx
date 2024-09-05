@@ -1,8 +1,5 @@
-
 import { useParams } from 'react-router-dom';
-import CategoriesItems from '../components/CategoriesItems/CategoriesItems';
-import Breadcrumbs from '../components/Breadcrumbs/Breadcrumbs';
-
+import { CategoriesItems, Breadcrumbs } from "../components"
 
 const CategoriesInnerPage = () => {
 

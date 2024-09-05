@@ -1,7 +1,4 @@
-
-import Breadcrumbs from '../components/Breadcrumbs/Breadcrumbs';
-import Categories from '../components/Categories/Categories';
-
+import { Categories, Breadcrumbs } from "../components"
 
 const CategoriesPage = () => {
 

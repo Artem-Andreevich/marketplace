@@ -1,7 +1,5 @@
-
+import { Breadcrumbs } from "../components"
 import { useParams } from 'react-router-dom';
-import Breadcrumbs from '../components/Breadcrumbs/Breadcrumbs';
-
 
 const ProductPage = () => {
 

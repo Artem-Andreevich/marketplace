@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Menu() {
+export function Menu() {
     return (
         <div className="menu js-menu">
           <div className="container"> 
@@ -231,6 +231,4 @@ function Menu() {
           </div>
         </div>
     );
-}
-
-export default Menu;
+};
