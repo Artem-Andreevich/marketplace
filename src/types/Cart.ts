@@ -1,3 +1,3 @@
-export default interface ICart {
+export interface ICart {
     products: []
 }

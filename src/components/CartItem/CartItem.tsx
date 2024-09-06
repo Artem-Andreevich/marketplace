@@ -1,9 +1,14 @@
+import { useSales } from "../../hooks";
+import { IProduct } from "../../types";
 
-export const CartItem = ({item}) => {
-    console.log(item)
+type CartItemProps = {
+    item: IProduct
+}
 
-    const sales = Math.floor( 100 - ((item.newPrice * 100) / item.oldPrice) )
+export const CartItem = ({item}: CartItemProps) => {
 
+    const sales = useSales(item.newPrice, item.oldPrice)
+    
     return (
         <div className="cart-item"> 
             <img src={item.img} alt=""/>

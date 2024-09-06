@@ -2,6 +2,7 @@ import { IProduct } from "../../types/Product"
 import { CatalogItem } from "../index"
 import { useQuery } from 'react-query';
 import { AppService } from '../../middleware/get-api';
+import { Loader } from "../Loader";
 
 
 export const PopularItems = () => {
@@ -10,18 +11,15 @@ export const PopularItems = () => {
         onError: (error: any) => {
             alert(console.log(error))
         },
-        select: ({data}):IProduct[] => data.map( product => ({
-            ...product
-        }))
+        select: ({data}) => data.filter( (product: IProduct) => product.label === "Хит")
     })
 
     return (
         <div className='popular-items'>
             <div className='container'>
                 <h2 className='popular-items__title'>Популярные товары</h2>
-                
-                { isLoading ? 
-                    <div>Loading...</div> :
+                {isLoading ? 
+                    <Loader /> :
                     <div className='catalog__items'>
                         {products?.map((item: IProduct) => {
                             return (
@@ -30,8 +28,7 @@ export const PopularItems = () => {
                         })}
                     </div>
                 }
-                </div>
-
+            </div>
         </div>
     );
 };

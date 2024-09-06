@@ -1,21 +1,22 @@
 import React, { useState } from 'react';
-import IPhone from '../../types/Phone';
+import { IProduct } from '../../types';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { cartActions } from '../../store/cart';
+import { useSales } from '../../hooks';
 
-interface CatalogItem {
-    item: IPhone
+type CatalogItemProps = {
+    item: IProduct
 }
 
-export const CatalogItem: React.FC<CatalogItem> = ({item}) => {
-    
+export const CatalogItem = ({item}: CatalogItemProps) => {
+
     const dispatch = useDispatch()
-	const countItemInCart: number = useSelector( ({ cart }: any) => cart.products.filter((product: IPhone) => product.id === item.id).length)
-    const [showCounter, setShowCounter] = useState(Boolean(countItemInCart))
+	const countItemInCart: number = useSelector( ({ cart }: any) => cart.products.filter((product: IProduct) => product.id === item.id).length)
+    const [showCounter, setShowCounter] = useState(!!countItemInCart)
     const [counterValue, setCounterValue] = useState(countItemInCart)
 
-    const sales = Math.floor( 100 - ((item.newPrice * 100) / item.oldPrice) )
+    const sales = useSales(item.newPrice, item.oldPrice)
 
     function addToCartHandler(): void{
         dispatch(cartActions.addToCart(item))

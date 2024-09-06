@@ -63,7 +63,13 @@
 	grid-template-columns: 1fr 340px;
 	gap: 40px 200px;
 }
-
+.loader {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	min-height: 200px;
+}
 
 
 

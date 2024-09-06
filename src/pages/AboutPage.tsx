@@ -3,6 +3,7 @@ import { Breadcrumbs, CatalogItem } from "../components"
 import { AppService } from "../middleware/get-api";
 import { useState } from "react";
 import { IProduct } from "../types/Product";
+import { Loader } from "../components/Loader";
 
 
 export const AboutPage = () => {
@@ -24,10 +25,10 @@ export const AboutPage = () => {
             <div className='container'>
                 <h2 className='popular-items__title'>Все товары</h2>
                     {isLoading ? 
-                        <div>Loading...</div> : 
+                        <Loader /> : 
                         products.length ? 
                             <div className='catalog__items'>
-                                {products.map( product => (
+                                {products.map( (product: IProduct) => (
                                     <CatalogItem item={product} key={product.article}/>
                                 ))}
                             </div> :

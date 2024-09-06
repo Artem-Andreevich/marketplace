@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { Breadcrumbs, CartItem } from "../components"
-import IPhone from "../types/Phone";
+import { IProduct } from "../types";
 
 export const CartPage = () => {
 
@@ -12,7 +12,7 @@ export const CartPage = () => {
             <div className='container'>
                 <div className="aside-grid">
                     <div className="cart__list">
-                        {products.map((item:IPhone) => {
+                        {products.map((item:IProduct) => {
                             return (
                                 <CartItem item={item} key={item.article}/>
                             )
