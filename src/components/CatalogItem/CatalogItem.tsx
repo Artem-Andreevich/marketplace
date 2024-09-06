@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import IPhone from '../../types/Phone';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { cartActions } from '../../store/cart';
 
 interface CatalogItem {
@@ -11,25 +11,27 @@ interface CatalogItem {
 export const CatalogItem: React.FC<CatalogItem> = ({item}) => {
     
     const dispatch = useDispatch()
-    const [showCounter, setShowCounter] = useState(false)
-    const [counterValue, setCounterValue] = useState(1)
+	const countItemInCart: number = useSelector( ({ cart }: any) => cart.products.filter((product: IPhone) => product.id === item.id).length)
+    const [showCounter, setShowCounter] = useState(Boolean(countItemInCart))
+    const [counterValue, setCounterValue] = useState(countItemInCart)
 
     const sales = Math.floor( 100 - ((item.newPrice * 100) / item.oldPrice) )
 
-    function showCounterHandler(): void{
-        setShowCounter(prev => !prev)
+    function addToCartHandler(): void{
         dispatch(cartActions.addToCart(item))
-    }
-    function incCount(){
+        if(counterValue === 0) {
+            setShowCounter(prev => !prev)
+        }
         setCounterValue(prev => prev += 1)
     }
-    function decCount(){
-        if(counterValue === 1) {
-            showCounterHandler()
-            return
+    function removeFromCartHandler(){
+        dispatch(cartActions.removeFromCart(item))
+        if(counterValue === 1){
+            setShowCounter(prev => !prev)
         }
         setCounterValue(prev => prev -= 1)
     }
+
 
     return (
         <div className='catalog-item'>
@@ -59,7 +61,7 @@ export const CatalogItem: React.FC<CatalogItem> = ({item}) => {
                     <button 
                         className={ showCounter ? "add-cart hidden" : "add-cart"} 
                         type="button"
-                        onClick={showCounterHandler}
+                        onClick={addToCartHandler}
                     >
                             <span>В корзину</span>
                             <svg className="icon" width="24px" height="28px"><use xlinkHref="#add-cart"></use></svg>
@@ -69,7 +71,7 @@ export const CatalogItem: React.FC<CatalogItem> = ({item}) => {
                         <button 
                             className="counter__dec" 
                             type="button"
-                            onClick={decCount}
+                            onClick={removeFromCartHandler}
                         >
                             <svg className="icon" width="16px" height="4px"><use xlinkHref="#counter-dec"></use></svg>
                         </button>
@@ -81,7 +83,7 @@ export const CatalogItem: React.FC<CatalogItem> = ({item}) => {
                         <button 
                             className="counter__inc" 
                             type="button"
-                            onClick={incCount}
+                            onClick={addToCartHandler}
                         >
                             <svg className="icon" width="16px" height="16px"><use xlinkHref="#counter-inc"></use></svg>
                         </button>

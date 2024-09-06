@@ -21,7 +21,7 @@ export const PopularItems = () => {
                 <div className='catalog__items'>
                 {populerItems.map((item: IPhone) => {
                     return (
-                        <CatalogItem item={item} key={item.id}/>
+                        <CatalogItem item={item} key={item.article}/>
                     )
                 })}
                 </div>
