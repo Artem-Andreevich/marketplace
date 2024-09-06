@@ -1,20 +1,20 @@
-import { useEffect, useState } from 'react';
-import { getProductsByCategoryID} from '../../middleware/get-api';
+import { useState } from 'react';
 import { CatalogItem } from "../index"
+import { useQuery } from 'react-query';
+import { AppService } from '../../middleware/get-api';
 
 export const CategoriesItems = ({ categoriesID }) => {
 
-    const [ categoryItems, setCategoryItems ] = useState([])
+    // const [ categoryItems, setCategoryItems ] = useState([])
 
-    useEffect( () => {
-        getProductsByCategoryID(categoriesID)
-            .then( products => setCategoryItems( products ))
-    },[])
+    const {isLoading, data:products} = useQuery('product', () => AppService.getAllProducts(categoriesID), {
+        select: ({data}) => data.map( products => { return products.categoriesID == categoriesID}),
+    })
 
     return (
         <div className='container'>
             <div className='catalog__items'>
-                {categoryItems.map((item) => {
+                {products.map((item) => {
                     return (
                         <CatalogItem item={item} key={item.id}/>
                     )

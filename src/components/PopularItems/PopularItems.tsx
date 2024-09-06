@@ -1,31 +1,37 @@
-import { useEffect, useState } from 'react';
-import IPhone from '../../types/Phone';
+import { IProduct } from "../../types/Product"
 import { CatalogItem } from "../index"
-import { getProductsByLabel } from '../../middleware/get-api';
+import { useQuery } from 'react-query';
+import { AppService } from '../../middleware/get-api';
 
 
 export const PopularItems = () => {
 
-    const [ populerItems, setPopularItems ] = useState([])
-
-    useEffect( () => {
-
-        getProductsByLabel('Хит')
-            .then( products => setPopularItems( products ))
-    },[])
+    const { isLoading, data:products } = useQuery('popular list', () => AppService.getAllProducts(), {
+        onError: (error: any) => {
+            alert(console.log(error))
+        },
+        select: ({data}):IProduct[] => data.map( product => ({
+            ...product
+        }))
+    })
 
     return (
         <div className='popular-items'>
             <div className='container'>
                 <h2 className='popular-items__title'>Популярные товары</h2>
-                <div className='catalog__items'>
-                {populerItems.map((item: IPhone) => {
-                    return (
-                        <CatalogItem item={item} key={item.article}/>
-                    )
-                })}
+                
+                { isLoading ? 
+                    <div>Loading...</div> :
+                    <div className='catalog__items'>
+                        {products?.map((item: IProduct) => {
+                            return (
+                                <CatalogItem item={item} key={item.article}/>
+                            )
+                        })}
+                    </div>
+                }
                 </div>
-            </div>
+
         </div>
     );
 };

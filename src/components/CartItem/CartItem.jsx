@@ -6,7 +6,7 @@ export const CartItem = ({item}) => {
 
     return (
         <div className="cart-item"> 
-            <img src={require(`../../assets/img/${item.img}`)} alt=""/>
+            <img src={item.img} alt=""/>
             <div className="cart-item__title">{item.name}</div>
             <div className="cart-item__order">
                 <div className="price">

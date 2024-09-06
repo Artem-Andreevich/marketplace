@@ -46,7 +46,7 @@ export const CatalogItem: React.FC<CatalogItem> = ({item}) => {
             </div>
             <div className='catalog-item__img'>
                 <Link to={`/product/${item.id}`}>
-                    <img src={require(`../../assets/img/${item.img}`)} alt="" />
+                    <img src={item.img} alt="" />
                 </Link>
             </div>
             <h2 className='catalog-item__title'>{item.name}</h2>

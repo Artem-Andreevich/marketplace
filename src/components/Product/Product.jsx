@@ -1,16 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
-import { getProductById } from "../../middleware/get-api";
+import { AppService } from "../../middleware/get-api";
+import { useQuery } from "react-query";
+import { IProduct } from "../../types/Product";
 
 export const Product = () => {
 
     const { productID } = useParams()
     const [ product, setProduct ] = useState({})
-
-    useEffect(() => {
-        getProductById(productID)
-            .then( product => setProduct(product))
-    },[productID])
+    // console.log(productID)
+    const { isLoading } = useQuery(['product item', productID], () => AppService.getProduct(Number(productID)), {
+        onSuccess: ({data}) => setProduct(data),
+        // enabled: false
+    })
+    // useEffect(() => {
+    //     getProductById(productID)
+    //         .then( product => setProduct(product))
+    // },[productID])
 
     const sales = Math.floor( 100 - ((product.newPrice * 100) / product.oldPrice) )
 
@@ -20,7 +26,7 @@ export const Product = () => {
                 <div className="product__inner">
                     <div className="product__pictures">
                         <div className="product__img"> 
-                            {/* <img src={require(`../../assets/img/${product.img}`)} alt="" /> */}
+                            <img src={product.img} alt="" />
                         </div>
                         <div className="product__add-to">
                             <button>

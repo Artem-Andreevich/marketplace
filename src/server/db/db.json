@@ -35,43 +35,43 @@
 		{
 			"id": 1,
 			"name": "Apple iPhone",
-			"img": "cat-iphone.webp",
+			"img": "/images/cat-iphone.webp",
 			"url": "iphone"
 		},
 		{
 			"id": 2,
 			"name": "Apple iPad",
-			"img": "cat-ipad.webp",
+			"img": "/images/cat-ipad.webp",
 			"url": "ipad"
 		},
 		{
 			"id": 3,
 			"name": "Apple iWatch",
-			"img": "cat-iwatch.webp",
+			"img": "/images/cat-iwatch.webp",
 			"url": "iwatch"
 		},
 		{
 			"id": 4,
 			"name": "Apple MacBook",
-			"img": "cat-mac.webp",
+			"img": "/images/cat-mac.webp",
 			"url": "macbook"
 		},
 		{
 			"id": 5,
 			"name": "Apple AirPods",
-			"img": "cat-airpods.webp",
+			"img": "/images/cat-airpods.webp",
 			"url": "airpods"
 		},
 		{
 			"id": 6,
 			"name": "Аксессуары",
-			"img": "cat-access.webp",
+			"img": "/images/cat-access.webp",
 			"url": "accessories"
 		},
 		{
 			"id": 7,
 			"name": "Гаджеты",
-			"img": "cat-gad.webp",
+			"img": "/images/cat-gad.webp",
 			"url": "gadget"
 		}
 	],
@@ -81,7 +81,7 @@
 			"categoriesID": 1,
 			"article": "100101",
 			"name": "Apple iPhone 15",
-			"img": "iphone-15.webp",
+			"img": "/images/iphone-15.webp",
 			"label": "Новинка",
 			"oldPrice": 105000,
 			"newPrice": 95000
@@ -91,7 +91,7 @@
 			"categoriesID": 1,
 			"article": "100102",
 			"name": "Apple iPhone 15 Pro",
-			"img": "iphone-15.webp",
+			"img": "/images/iphone-15.webp",
 			"label": "Новинка",
 			"oldPrice": 105000,
 			"newPrice": 95000
@@ -101,7 +101,7 @@
 			"categoriesID": 1,
 			"article": "100103",
 			"name": "Apple iPhone 15 Pro Max",
-			"img": "iphone-15.webp",
+			"img": "/images/iphone-15.webp",
 			"label": "Хит",
 			"oldPrice": 105000,
 			"newPrice": 95000
@@ -111,7 +111,7 @@
 			"categoriesID": 1,
 			"article": "100104",
 			"name": "Apple iPhone 14",
-			"img": "iphone-15.webp",
+			"img": "/images/iphone-15.webp",
 			"label": "Хит",
 			"oldPrice": 105000,
 			"newPrice": 95000
@@ -121,7 +121,7 @@
 			"categoriesID": 1,
 			"article": "100105",
 			"name": "Apple iPhone 14 Pro",
-			"img": "iphone-15.webp",
+			"img": "/images/iphone-15.webp",
 			"label": "Хит",
 			"oldPrice": 105000,
 			"newPrice": 95000
@@ -131,7 +131,7 @@
 			"categoriesID": 1,
 			"article": "100106",
 			"name": "Apple iPhone 14 Pro Max",
-			"img": "iphone-15.webp",
+			"img": "/images/iphone-15.webp",
 			"label": "Новинка",
 			"oldPrice": 105000,
 			"newPrice": 95000
@@ -141,7 +141,7 @@
 			"categoriesID": 2,
 			"article": "100207",
 			"name": "Apple iPad 11",
-			"img": "ipad_pro_11.webp",
+			"img": "/images/ipad_pro_11.webp",
 			"label": "Хит",
 			"oldPrice": 105000,
 			"newPrice": 95000
@@ -151,7 +151,7 @@
 			"categoriesID": 2,
 			"article": "100208",
 			"name": "Apple iPad 10",
-			"img": "ipad_pro_11.webp",
+			"img": "/images/ipad_pro_11.webp",
 			"label": "Хит",
 			"oldPrice": 105000,
 			"newPrice": 95000

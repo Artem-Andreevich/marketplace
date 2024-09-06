@@ -1,35 +1,32 @@
-import React, { useEffect, useState } from 'react';
-import { getEndpoints } from '../../middleware/get-api';
+import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { ICategories } from "../../types/Categories"
+import { useQuery } from 'react-query';
+import { AppService } from '../../middleware/get-api';
 
-type Category = {
-    id: number,
-    name: string,
-    img: string,
-    url: string
-}
+
 
 export const Categories = () => {
 
-    const [categories, setCategories] = useState([])
+    const [categories, setCategories] = useState<ICategories[]>([])
     const location = useLocation()
     const isMainPage = location.pathname === '/'
 
-    useEffect( () => {
-        getEndpoints('categories')
-            .then( data => setCategories(data))
-    },[])
+    const { isLoading } = useQuery('categories list', () => AppService.getCategories(), {
+        onSuccess: ({data}) => setCategories(data),
+        onError: (error: any) => alert(error.message)
+    })
 
     return (
         <div className='categories'>
             <div className='container'>
                 <ul className='categories__tile'>
-                    {categories.map((item: Category) => {
+                    {categories.map((item: ICategories) => {
                         return (
                             <li key={item.id} className='category-item'>
                                 <Link to={ isMainPage ? `categories/${item.id}` : `${item.id}`} className='category-item__link'>
                                     <h2 className='category-item__title'>{item.name}</h2>
-                                    <img src={require(`../../assets/img/${item.img}`)} className='category-item__pic' alt="" />
+                                    <img src={item.img} className='category-item__pic' alt="" />
                                 </Link>
                             </li>
                         )
