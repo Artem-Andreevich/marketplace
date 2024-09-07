@@ -81,7 +81,7 @@
 			"categoriesID": 1,
 			"article": "100101",
 			"name": "Apple iPhone 15",
-			"img": "/images/iphone-15.webp",
+			"img": ["/images/iphone-15.webp"],
 			"label": "Новинка",
 			"oldPrice": 105000,
 			"newPrice": 95000
@@ -91,7 +91,7 @@
 			"categoriesID": 1,
 			"article": "100102",
 			"name": "Apple iPhone 15 Pro",
-			"img": "/images/iphone-15.webp",
+			"img": ["/images/iphone-15.webp"],
 			"label": "Новинка",
 			"oldPrice": 105000,
 			"newPrice": 95000
@@ -101,7 +101,7 @@
 			"categoriesID": 1,
 			"article": "100103",
 			"name": "Apple iPhone 15 Pro Max",
-			"img": "/images/iphone-15.webp",
+			"img": ["/images/iphone-15.webp"],
 			"label": "Хит",
 			"oldPrice": 105000,
 			"newPrice": 95000
@@ -111,7 +111,7 @@
 			"categoriesID": 1,
 			"article": "100104",
 			"name": "Apple iPhone 14",
-			"img": "/images/iphone-15.webp",
+			"img": ["/images/iphone-15.webp"],
 			"label": "Хит",
 			"oldPrice": 105000,
 			"newPrice": 95000
@@ -121,7 +121,7 @@
 			"categoriesID": 1,
 			"article": "100105",
 			"name": "Apple iPhone 14 Pro",
-			"img": "/images/iphone-15.webp",
+			"img": ["/images/iphone-15.webp"],
 			"label": "Хит",
 			"oldPrice": 105000,
 			"newPrice": 95000
@@ -131,7 +131,7 @@
 			"categoriesID": 1,
 			"article": "100106",
 			"name": "Apple iPhone 14 Pro Max",
-			"img": "/images/iphone-15.webp",
+			"img": ["/images/iphone-15.webp"],
 			"label": "Новинка",
 			"oldPrice": 105000,
 			"newPrice": 95000
@@ -141,7 +141,7 @@
 			"categoriesID": 2,
 			"article": "100207",
 			"name": "Apple iPad 11",
-			"img": "/images/ipad_pro_11.webp",
+			"img": ["/images/ipad_pro_11.webp"],
 			"label": "Хит",
 			"oldPrice": 105000,
 			"newPrice": 95000
@@ -151,10 +151,30 @@
 			"categoriesID": 2,
 			"article": "100208",
 			"name": "Apple iPad 10",
-			"img": "/images/ipad_pro_11.webp",
+			"img": ["/images/ipad_pro_11.webp"],
 			"label": "Хит",
 			"oldPrice": 105000,
 			"newPrice": 95000
+		},
+		{
+			"id": 9,
+			"categoriesID": 5,
+			"article": "100501",
+			"name": "Apple AirPods 3",
+			"img": ["/images/AirPods_3.webp"],
+			"label": "Хит",
+			"oldPrice": 14500,
+			"newPrice": 12500
+		},
+		{
+			"id": 10,
+			"categoriesID": 5,
+			"article": "100502",
+			"name": "Apple AirPods Max Green",
+			"img": ["/images/AirPods_Max_Green.webp", "/images/AirPods_Max_Green_2.webp"],
+			"label": "Новинка",
+			"oldPrice": 49990,
+			"newPrice": 45990
 		}
 	]
 }

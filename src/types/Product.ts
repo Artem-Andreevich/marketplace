@@ -3,7 +3,7 @@ export interface IProduct {
     categoriesID: number,
     article: string,
     name: string,
-    img: string,
+    img: [string],
     label: string,
     oldPrice: number,
     newPrice: number

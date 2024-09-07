@@ -11,7 +11,7 @@ export const CartItem = ({item}: CartItemProps) => {
     
     return (
         <div className="cart-item"> 
-            <img src={item.img} alt=""/>
+            <img src={item.img[0]} alt=""/>
             <div className="cart-item__title">{item.name}</div>
             <div className="cart-item__order">
                 <div className="price">

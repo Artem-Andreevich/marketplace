@@ -11,7 +11,6 @@ export const Product = () => {
     const { productID } = useParams()
     const [ product, setProduct ] = useState<IProduct>()
 
-
     useLayoutEffect(() => {
         window.scrollTo({
             top: 0,
@@ -22,7 +21,6 @@ export const Product = () => {
 
     const { isLoading } = useQuery(['product item', productID], 
         () => AppService.getProduct(Number(productID)), {
-            enabled: !!productID,
             onSuccess: ({data}) => setProduct(data)
         })
 
@@ -38,7 +36,7 @@ export const Product = () => {
                     <div className="product__inner">
                         <div className="product__pictures">
                             <div className="product__img"> 
-                                <img src={product?.img} alt="" />
+                                <img src={product?.img[0]} alt="" />
                             </div>
                             <div className="product__add-to">
                                 <button>

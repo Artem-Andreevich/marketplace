@@ -3,7 +3,7 @@ import { useSelector } from "react-redux"
 
 export function Header() {
 
-	const cartCount = useSelector(({ cart }) => cart.products.length)
+	const cartCount = useSelector(({ cart }: any) => cart.products.length)
 
 	return (
 		<header className="header">
@@ -79,7 +79,7 @@ export function Header() {
 											<use xlinkHref="#compare"></use>
 										</svg><span className="control__label"></span>
 									</div></a></li>
-								<li><Link to={'/cart'} className="control__item" href="#">
+								<li><Link to={'/cart'} className="control__item">
 									<div className="control__icon">
 										<svg className="icon control-icon" width="24px" height="30px">
 											<use xlinkHref="#basket"></use>

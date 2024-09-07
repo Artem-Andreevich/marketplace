@@ -47,7 +47,7 @@ export const CatalogItem = ({item}: CatalogItemProps) => {
             </div>
             <div className='catalog-item__img'>
                 <Link to={`/product/${item.id}`}>
-                    <img src={item.img} alt="" />
+                    <img src={item.img[0]} alt="" />
                 </Link>
             </div>
             <h2 className='catalog-item__title'>{item.name}</h2>
