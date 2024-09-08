@@ -3,7 +3,7 @@ import { useSelector } from "react-redux"
 
 export function Header() {
 
-	const cartCount = useSelector(({ cart }: any) => cart.products.length)
+	const cartCount = useSelector( ({ cart }: any) => cart.length)
 
 	return (
 		<header className="header">

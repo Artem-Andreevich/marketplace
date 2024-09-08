@@ -1,38 +1,26 @@
-import React, { useState } from 'react';
-import { IProduct } from '../../types';
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { cartActions } from '../../store/cart';
+import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { useActions } from "../../hooks/index"
 import { useSales } from '../../hooks';
+import { IProduct } from '../../types';
 
 type CatalogItemProps = {
     item: IProduct
 }
 
-export const CatalogItem = ({item}: CatalogItemProps) => {
+export const CatalogItem = ({ item }: CatalogItemProps ) => {
 
-    const dispatch = useDispatch()
-	const countItemInCart: number = useSelector( ({ cart }: any) => cart.products.filter((product: IProduct) => product.id === item.id).length)
-    const [showCounter, setShowCounter] = useState(!!countItemInCart)
-    const [counterValue, setCounterValue] = useState(countItemInCart)
-
+    const { cart }: any = useSelector( cart => cart)
+    const [ counterValue, setCounterValue ] = useState(0)
+    const { addProduct, removeProduct }: any = useActions()
     const sales = useSales(item.newPrice, item.oldPrice)
 
-    function addToCartHandler(): void{
-        dispatch(cartActions.addToCart(item))
-        if(counterValue === 0) {
-            setShowCounter(prev => !prev)
-        }
-        setCounterValue(prev => prev += 1)
-    }
-    function removeFromCartHandler(){
-        dispatch(cartActions.removeFromCart(item))
-        if(counterValue === 1){
-            setShowCounter(prev => !prev)
-        }
-        setCounterValue(prev => prev -= 1)
-    }
-
+    useEffect( () => {
+        const productIndex: number = cart.findIndex((cart: any) => cart.product.id === item.id)
+        const countItemInCart: number = cart[productIndex]?.productCount
+        setCounterValue(countItemInCart)
+    },[cart, item.id])
 
     return (
         <div className='catalog-item'>
@@ -60,19 +48,19 @@ export const CatalogItem = ({item}: CatalogItemProps) => {
 
                 <div className="catalog-item__buy js-buy">
                     <button 
-                        className={ showCounter ? "add-cart hidden" : "add-cart"} 
+                        className={ counterValue ? "add-cart hidden" : "add-cart"} 
                         type="button"
-                        onClick={addToCartHandler}
+                        onClick={() => addProduct(item)}
                     >
                             <span>В корзину</span>
                             <svg className="icon" width="24px" height="28px"><use xlinkHref="#add-cart"></use></svg>
                     </button>
 
-                    <div className={showCounter ? "counter" : "counter hidden"}>
+                    <div className={ counterValue ? "counter" : "counter hidden"}>
                         <button 
                             className="counter__dec" 
                             type="button"
-                            onClick={removeFromCartHandler}
+                            onClick={() => removeProduct(item)}
                         >
                             <svg className="icon" width="16px" height="4px"><use xlinkHref="#counter-dec"></use></svg>
                         </button>
@@ -84,7 +72,7 @@ export const CatalogItem = ({item}: CatalogItemProps) => {
                         <button 
                             className="counter__inc" 
                             type="button"
-                            onClick={addToCartHandler}
+                            onClick={() => addProduct(item)}
                         >
                             <svg className="icon" width="16px" height="16px"><use xlinkHref="#counter-inc"></use></svg>
                         </button>

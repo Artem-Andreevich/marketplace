@@ -1,6 +1,8 @@
-import { combineReducers } from "redux"
-import { cartReducer as cart } from "./cart"
+import { combineReducers } from "@reduxjs/toolkit"
+import { apiSlice } from "./api/api"
+import reducer from "./cart/cart.slice"
 
 export const reducers = combineReducers({
-    cart
+    cart: reducer,
+    [apiSlice.reducerPath]: apiSlice.reducer
 })

@@ -1,21 +1,14 @@
-import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ICategories } from "../../types/Categories"
-import { useQuery } from 'react-query';
-import { AppService } from '../../middleware/get-api';
 import { Loader } from '../Loader';
+import { useGetCategoriesQuery } from '../../store/api/api';
 
 
 export const Categories = () => {
 
-    const [categories, setCategories] = useState<ICategories[]>([])
     const location = useLocation()
     const isMainPage = location.pathname === '/'
-
-    const { isLoading } = useQuery('categories list', () => AppService.getCategories(), {
-        onSuccess: ({data}) => setCategories(data),
-        onError: (error: any) => alert(error.message)
-    })
+    const { isLoading, data: categories} = useGetCategoriesQuery()
 
     return (
         <div className='categories'>

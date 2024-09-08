@@ -4,17 +4,17 @@ import { IProduct } from "../types";
 
 export const CartPage = () => {
 
-    const products = useSelector( ({cart}: any) => cart.products )
-    
+    const { cart }: any = useSelector( cart => cart)
+
     return (
         <main className="page inner-page">
             <Breadcrumbs />
             <div className='container'>
                 <div className="aside-grid">
                     <div className="cart__list">
-                        {products.map((item:IProduct) => {
+                        {cart.map((item: any) => {
                             return (
-                                <CartItem item={item} key={item.article}/>
+                                <CartItem item={item} key={item.product.article}/>
                             )
                         })}
                     </div>

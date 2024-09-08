@@ -2,7 +2,7 @@ import AppRouter from '../routers';
 import { createPortal } from 'react-dom';
 import { Provider } from "react-redux"
 import { QueryClient, QueryClientProvider } from 'react-query';
-import { store } from '../store';
+import { store } from '../store/store';
 import { Svg } from "../layout"
 
 import './globalStyles/bootstrap.min.css';

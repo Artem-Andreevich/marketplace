@@ -1,23 +1,11 @@
-import { useQuery } from "react-query";
 import { Breadcrumbs, CatalogItem } from "../components"
-import { AppService } from "../middleware/get-api";
-import { useState } from "react";
 import { IProduct } from "../types/Product";
 import { Loader } from "../components/Loader";
-
+import { useGetProductsQuery } from "../store/api/api";
 
 export const AboutPage = () => {
 
-    const [products, setProducts] = useState<IProduct[]>([])
-
-    const { isLoading } = useQuery('all products', () => AppService.getAllProducts(), {
-        onSuccess: ({data}) => {
-            setProducts(data)
-        },
-        onError: (error: any) => {
-            alert(error.message)
-        }
-    })
+    const { isLoading, data: products } = useGetProductsQuery()
     
     return (
         <main className="page inner-page">

@@ -1,18 +1,12 @@
 import { IProduct } from "../../types/Product"
 import { CatalogItem } from "../index"
-import { useQuery } from 'react-query';
-import { AppService } from '../../middleware/get-api';
 import { Loader } from "../Loader";
+import { useGetProductByLabelQuery } from "../../store/api/api";
 
 
 export const PopularItems = () => {
 
-    const { isLoading, data:products } = useQuery('popular list', () => AppService.getAllProducts(), {
-        onError: (error: any) => {
-            alert(console.log(error))
-        },
-        select: ({data}) => data.filter( (product: IProduct) => product.label === "Хит")
-    })
+    const {isLoading, data: products} = useGetProductByLabelQuery('Хит')
 
     return (
         <div className='popular-items'>
