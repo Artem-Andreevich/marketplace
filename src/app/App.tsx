@@ -1,4 +1,4 @@
-import AppRouter from '../routers';
+import { AppRouter } from '../routers/AppRouter';
 import { createPortal } from 'react-dom';
 import { Provider } from "react-redux"
 import { store } from '../store/store';

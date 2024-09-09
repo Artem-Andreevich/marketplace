@@ -2,7 +2,8 @@ import { Route, Routes } from "react-router-dom"
 import { AboutPage, MainPage, CategoriesInnerPage, ProductPage, CategoriesPage, CartPage} from "../pages"
 import { Layout } from "../hoc"
 
-function AppRouter() {
+
+export const AppRouter = () => {
 
     return (
 		<Routes>
@@ -17,4 +18,3 @@ function AppRouter() {
 		</Routes>
     )
 }
-export default AppRouter;

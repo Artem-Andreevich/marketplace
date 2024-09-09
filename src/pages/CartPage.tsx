@@ -1,10 +1,10 @@
-import { useSelector } from "react-redux";
 import { Breadcrumbs, CartItem } from "../components"
-import { IProduct } from "../types";
+import { useAppSelector } from "../hooks/useAppSelector";
+
 
 export const CartPage = () => {
 
-    const { cart }: any = useSelector( cart => cart)
+    const { cart } = useAppSelector( cart => cart)
 
     return (
         <main className="page inner-page">
@@ -12,7 +12,7 @@ export const CartPage = () => {
             <div className='container'>
                 <div className="aside-grid">
                     <div className="cart__list">
-                        {cart.map((item: any) => {
+                        {cart.map(item => {
                             return (
                                 <CartItem item={item} key={item.product.article}/>
                             )
