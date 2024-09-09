@@ -8,19 +8,19 @@ export const apiSlice = createApi({
     baseQuery: fetchBaseQuery({ baseUrl: API_URL }),
     endpoints: (builder) => ({
         getProducts: builder.query<IProduct[], void>({
-            query: () => '/products'
+            query: () => `products`
         }),
         getProductById: builder.query<IProduct, number>({
-            query: (id) => `/products/${id}`
+            query: (id) => `products/${id}`
         }),
         getProductsByCategory: builder.query<IProduct[], number>({
-            query: (id) => `/products/?categoriesID=${id}`
+            query: (id) => `products/?categoriesID=${id}`
         }),
         getProductsByLabel: builder.query<IProduct[], string>({
-            query: (label) => `/products/?label=${label}`
+            query: (label) => `products/?label=${label}`
         }),
         getCategories: builder.query<ICategories[], void>({
-            query: () => '/categories'
+            query: () => `categories`
         }),
     })
 });

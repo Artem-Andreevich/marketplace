@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useActions } from "../../hooks/index"
 import { useSales } from '../../hooks';
-import { IProduct, IProductCart } from '../../types';
+import { IProduct } from '../../types';
 import { useAppSelector } from '../../hooks/useAppSelector';
 
 type CatalogItemProps = {
@@ -17,7 +17,7 @@ export const CatalogItem = ({ product }: CatalogItemProps ) => {
     const sales = useSales(product.newPrice, product.oldPrice)
 
     useEffect( () => {
-        const productIndex: number = cart.findIndex((item: IProductCart) => item.product.id === product.id)
+        const productIndex: number = cart.findIndex(item => item.product.id === product.id)
         const countItemInCart: number = cart[productIndex]?.productCount
         setCounterValue(countItemInCart)
     },[cart, product.id])
@@ -38,7 +38,9 @@ export const CatalogItem = ({ product }: CatalogItemProps ) => {
                     <img src={product.img[0]} alt="" />
                 </Link>
             </div>
-            <h2 className='catalog-item__title'>{product.name}</h2>
+            <Link to={`/product/${product.id}`}>
+                <h2 className='catalog-item__title' title={product.name}>{product.name}</h2>
+            </Link>
 
             <div className="catalog-item__order">
                 <div className="catalog-item__price price">

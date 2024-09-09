@@ -5,9 +5,7 @@ export const CategoriesInnerPage = () => {
     return (
         <main className="page inner-page">
             <Breadcrumbs />
-            <div className='container'>
-                <CategoriesItems />
-            </div>
+            <CategoriesItems />
         </main>
     );
 };

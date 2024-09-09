@@ -6,5 +6,13 @@ export interface IProduct {
     img: [string],
     label: string,
     oldPrice: number,
-    newPrice: number
+    newPrice: number,
+    details?: {
+        color?: string,
+        memory?: string,
+    },
+    priceHistory?: {
+        prices: number[],
+        months: string[]
+    }
 }

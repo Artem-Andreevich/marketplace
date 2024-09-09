@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useGetProductByIdQuery } from "../../store/api/api";
 import { useSales } from "../../hooks";
 import { Loader } from "../Loader";
+import { ProductChart } from "../ProductChart/ProductChart"
 
 
 export const Product = () => {
@@ -18,6 +19,11 @@ export const Product = () => {
             behavior: 'smooth'
         });
     }, [productID]);
+
+    const productChartData = {
+        prices: product?.priceHistory?.prices,
+        months: product?.priceHistory?.months,
+    }
 
     return (
         <>
@@ -88,7 +94,9 @@ export const Product = () => {
                                         <div className="chart">
                                             <dt>История цены:</dt>
                                             <dd>
-                                                <canvas id="priceChart"></canvas>
+                                                <div id="priceChart">
+                                                    <ProductChart data={productChartData} />
+                                                </div>
                                             </dd>
                                         </div>
                                     </dl>

@@ -77,7 +77,7 @@
 	],
 	"products": [
 		{
-			"id": 1,
+			"id": 101,
 			"categoriesID": 1,
 			"article": "100101",
 			"name": "Apple iPhone 15",
@@ -87,7 +87,7 @@
 			"newPrice": 95000
 		},
 		{
-			"id": 2,
+			"id": 102,
 			"categoriesID": 1,
 			"article": "100102",
 			"name": "Apple iPhone 15 Pro",
@@ -97,7 +97,7 @@
 			"newPrice": 95000
 		},
 		{
-			"id": 3,
+			"id": 103,
 			"categoriesID": 1,
 			"article": "100103",
 			"name": "Apple iPhone 15 Pro Max",
@@ -107,7 +107,7 @@
 			"newPrice": 95000
 		},
 		{
-			"id": 4,
+			"id": 104,
 			"categoriesID": 1,
 			"article": "100104",
 			"name": "Apple iPhone 14",
@@ -117,7 +117,7 @@
 			"newPrice": 95000
 		},
 		{
-			"id": 5,
+			"id": 105,
 			"categoriesID": 1,
 			"article": "100105",
 			"name": "Apple iPhone 14 Pro",
@@ -127,7 +127,7 @@
 			"newPrice": 95000
 		},
 		{
-			"id": 6,
+			"id": 106,
 			"categoriesID": 1,
 			"article": "100106",
 			"name": "Apple iPhone 14 Pro Max",
@@ -137,7 +137,7 @@
 			"newPrice": 95000
 		},
 		{
-			"id": 7,
+			"id": 201,
 			"categoriesID": 2,
 			"article": "100207",
 			"name": "Apple iPad 11",
@@ -147,17 +147,43 @@
 			"newPrice": 95000
 		},
 		{
-			"id": 8,
+			"id": 202,
 			"categoriesID": 2,
 			"article": "100208",
-			"name": "Apple iPad 10",
-			"img": ["/images/ipad_pro_11.webp"],
-			"label": "Хит",
+			"name": "Apple iPad Air 10.9 (2022) M1 LTE 256gb Starlight",
+			"img": ["/images/iPad_Air_10.9_(2022)_M1_LTE_256gb_Starlight.webp", "/images/iPad_Air_10.9_(2022)_M1_LTE_256gb_Starlight_2.webp", "/images/iPad_Air_10.9_(2022)_M1_LTE_256gb_Starlight_3.webp"],
+			"label": "",
 			"oldPrice": 105000,
-			"newPrice": 95000
+			"newPrice": 95190,
+			"details" : {
+				"color": "Starlight",
+				"memory": "256GB"
+			},
+			"priceHistory": {
+				"prices": [20000, 31000, 43000, 35000, 34000, 44000],
+				"months": ["Январь 2024", "Февраль 2024", "Март 2024", "Август 2024", "Июль 2024", "Июнь 2024"]
+			}
 		},
 		{
-			"id": 9,
+			"id": 203,
+			"categoriesID": 2,
+			"article": "100209",
+			"name": "Apple iPad Air 10.9 (2022) M1 LTE 256gb Blue",
+			"img": ["/images/iPad_Air_10.9_(2022)_M1_LTE_256gb_Blue.webp", "/images/iPad_Air_10.9_(2022)_M1_LTE_256gb_Blue_2.webp", "/images/iPad_Air_10.9_(2022)_M1_LTE_256gb_Blue_3.webp"],
+			"label": "Хит",
+			"oldPrice": 95490,
+			"newPrice": 88990,
+			"details" : {
+				"color": "Blue",
+				"memory": "256GB"
+			},
+			"priceHistory": {
+				"prices": [95000, 105000, 86000, 150000, 99000, 88900],
+				"months": ["Январь 2024", "Февраль 2024", "Март 2024", "Август 2024", "Июль 2024", "Июнь 2024"]
+			}
+		},
+		{
+			"id": 501,
 			"categoriesID": 5,
 			"article": "100501",
 			"name": "Apple AirPods 3",
@@ -167,7 +193,7 @@
 			"newPrice": 12500
 		},
 		{
-			"id": 10,
+			"id": 502,
 			"categoriesID": 5,
 			"article": "100502",
 			"name": "Apple AirPods Max Green",
@@ -177,7 +203,7 @@
 			"newPrice": 45990
 		},
 		{
-			"id": 11,
+			"id": 503,
 			"categoriesID": 5,
 			"article": "100503",
 			"name": "Apple AirPods Max Silver",
@@ -187,7 +213,7 @@
 			"newPrice": 45990
 		},
 		{
-			"id": 12,
+			"id": 504,
 			"categoriesID": 5,
 			"article": "100504",
 			"name": "Apple AirPods Max Sky Blue",
@@ -197,7 +223,7 @@
 			"newPrice": 45990
 		},
 		{
-			"id": 13,
+			"id": 505,
 			"categoriesID": 5,
 			"article": "100505",
 			"name": "Apple AirPods Max Space Gray",
@@ -207,7 +233,7 @@
 			"newPrice": 45990
 		},
 		{
-			"id": 14,
+			"id": 506,
 			"categoriesID": 5,
 			"article": "100506",
 			"name": "Apple AirPods Max Pink",
@@ -217,7 +243,7 @@
 			"newPrice": 45990
 		},
 		{
-			"id": 15,
+			"id": 507,
 			"categoriesID": 5,
 			"article": "100507",
 			"name": "Apple AirPods Pro 2021 MagSafe",
