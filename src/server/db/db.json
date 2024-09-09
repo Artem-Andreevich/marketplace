@@ -171,10 +171,60 @@
 			"categoriesID": 5,
 			"article": "100502",
 			"name": "Apple AirPods Max Green",
-			"img": ["/images/AirPods_Max_Green.webp", "/images/AirPods_Max_Green_2.webp"],
+			"img": ["/images/AirPods_Max_Green.webp", "/images/AirPods_Max_Green_2.webp", "/images/AirPods_Max_Green_3.webp"],
 			"label": "Новинка",
 			"oldPrice": 49990,
 			"newPrice": 45990
+		},
+		{
+			"id": 11,
+			"categoriesID": 5,
+			"article": "100503",
+			"name": "Apple AirPods Max Silver",
+			"img": ["/images/AirPods_Max_Silver.webp", "/images/AirPods_Max_Silver_2.webp"],
+			"label": "Новинка",
+			"oldPrice": 49990,
+			"newPrice": 45990
+		},
+		{
+			"id": 12,
+			"categoriesID": 5,
+			"article": "100504",
+			"name": "Apple AirPods Max Sky Blue",
+			"img": ["/images/AirPods_Max_Sky_blue.webp", "/images/AirPods_Max_Sky_blue_2.webp"],
+			"label": "Новинка",
+			"oldPrice": 49990,
+			"newPrice": 45990
+		},
+		{
+			"id": 13,
+			"categoriesID": 5,
+			"article": "100505",
+			"name": "Apple AirPods Max Space Gray",
+			"img": ["/images/AirPods_Max_Space_Gray.webp", "/images/AirPods_Max_Space_Gray_2.webp"],
+			"label": "Новинка",
+			"oldPrice": 49990,
+			"newPrice": 45990
+		},
+		{
+			"id": 14,
+			"categoriesID": 5,
+			"article": "100506",
+			"name": "Apple AirPods Max Pink",
+			"img": ["/images/Apple_AirPods_Max_Pink.webp", "/images/Apple_AirPods_Max_Pink_2.webp"],
+			"label": "Новинка",
+			"oldPrice": 49990,
+			"newPrice": 45990
+		},
+		{
+			"id": 15,
+			"categoriesID": 5,
+			"article": "100507",
+			"name": "Apple AirPods Pro 2021 MagSafe",
+			"img": ["/images/AirPods_Pro_2021_MagSafe.webp", "/images/AirPods_Pro_2021_MagSafe_2.webp", "/images/AirPods_Pro_2021_MagSafe_3.webp"],
+			"label": "Новинка",
+			"oldPrice": 23990,
+			"newPrice": 19990
 		}
 	]
 }

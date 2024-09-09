@@ -1,7 +1,7 @@
-import { Breadcrumbs, CatalogItem } from "../components"
-import { IProduct } from "../types/Product";
-import { Loader } from "../components/Loader";
 import { useGetProductsQuery } from "../store/api/api";
+import { Breadcrumbs, CatalogItem } from "../components"
+import { Loader } from "../components/Loader";
+
 
 export const AboutPage = () => {
 
@@ -14,10 +14,10 @@ export const AboutPage = () => {
                 <h2 className='popular-items__title'>Все товары</h2>
                     {isLoading ? 
                         <Loader /> : 
-                        products.length ? 
+                        products?.length ? 
                             <div className='catalog__items'>
-                                {products.map( (product: IProduct) => (
-                                    <CatalogItem item={product} key={product.article}/>
+                                {products.map(item => (
+                                    <CatalogItem product={item} key={item.id}/>
                                 ))}
                             </div> :
                             <span>Товары не найдены</span>

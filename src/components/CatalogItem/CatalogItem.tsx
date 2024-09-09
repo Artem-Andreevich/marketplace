@@ -1,30 +1,30 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
 import { useActions } from "../../hooks/index"
 import { useSales } from '../../hooks';
-import { IProduct } from '../../types';
+import { IProduct, IProductCart } from '../../types';
+import { useAppSelector } from '../../hooks/useAppSelector';
 
 type CatalogItemProps = {
-    item: IProduct
+    product: IProduct
 }
 
-export const CatalogItem = ({ item }: CatalogItemProps ) => {
+export const CatalogItem = ({ product }: CatalogItemProps ) => {
 
-    const { cart }: any = useSelector( cart => cart)
+    const { cart } = useAppSelector( cart => cart)
     const [ counterValue, setCounterValue ] = useState(0)
-    const { addProduct, removeProduct }: any = useActions()
-    const sales = useSales(item.newPrice, item.oldPrice)
+    const { addProduct, removeProduct } = useActions()
+    const sales = useSales(product.newPrice, product.oldPrice)
 
     useEffect( () => {
-        const productIndex: number = cart.findIndex((cart: any) => cart.product.id === item.id)
+        const productIndex: number = cart.findIndex((item: IProductCart) => item.product.id === product.id)
         const countItemInCart: number = cart[productIndex]?.productCount
         setCounterValue(countItemInCart)
-    },[cart, item.id])
+    },[cart, product.id])
 
     return (
         <div className='catalog-item'>
-            <div className='catalog-item__label'>{item.label}</div>
+            <div className='catalog-item__label'>{product.label}</div>
             <div className='catalog-item__add-to'>
                 <button className="add-to active" type="button">
                     <svg className="icon-fill" width="28px" height="24px"><use xlinkHref="#fav"></use></svg>
@@ -34,23 +34,23 @@ export const CatalogItem = ({ item }: CatalogItemProps ) => {
                 </button>
             </div>
             <div className='catalog-item__img'>
-                <Link to={`/product/${item.id}`}>
-                    <img src={item.img[0]} alt="" />
+                <Link to={`/product/${product.id}`}>
+                    <img src={product.img[0]} alt="" />
                 </Link>
             </div>
-            <h2 className='catalog-item__title'>{item.name}</h2>
+            <h2 className='catalog-item__title'>{product.name}</h2>
 
             <div className="catalog-item__order">
                 <div className="catalog-item__price price">
-                    <div className="price__old"><s>{`${item.oldPrice} ₽`}</s><span>{`${sales}%`}</span></div>
-                    <div className="price__new">{`${item.newPrice} ₽`}</div>
+                    <div className="price__old"><s>{`${product.oldPrice} ₽`}</s><span>{`${sales}%`}</span></div>
+                    <div className="price__new">{`${product.newPrice} ₽`}</div>
                 </div>
 
                 <div className="catalog-item__buy js-buy">
                     <button 
                         className={ counterValue ? "add-cart hidden" : "add-cart"} 
                         type="button"
-                        onClick={() => addProduct(item)}
+                        onClick={() => addProduct(product)}
                     >
                             <span>В корзину</span>
                             <svg className="icon" width="24px" height="28px"><use xlinkHref="#add-cart"></use></svg>
@@ -60,7 +60,7 @@ export const CatalogItem = ({ item }: CatalogItemProps ) => {
                         <button 
                             className="counter__dec" 
                             type="button"
-                            onClick={() => removeProduct(item)}
+                            onClick={() => removeProduct(product)}
                         >
                             <svg className="icon" width="16px" height="4px"><use xlinkHref="#counter-dec"></use></svg>
                         </button>
@@ -72,7 +72,7 @@ export const CatalogItem = ({ item }: CatalogItemProps ) => {
                         <button 
                             className="counter__inc" 
                             type="button"
-                            onClick={() => addProduct(item)}
+                            onClick={() => addProduct(product)}
                         >
                             <svg className="icon" width="16px" height="16px"><use xlinkHref="#counter-inc"></use></svg>
                         </button>

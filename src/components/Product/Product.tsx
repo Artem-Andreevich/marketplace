@@ -1,14 +1,14 @@
 import { useLayoutEffect } from "react";
 import { useParams } from 'react-router-dom';
+import { useGetProductByIdQuery } from "../../store/api/api";
 import { useSales } from "../../hooks";
 import { Loader } from "../Loader";
-import { useGetProductByIdQuery } from "../../store/api/api";
 
 
 export const Product = () => {
 
     const { productID } = useParams()
-    const { isLoading, data: product } = useGetProductByIdQuery(productID)
+    const { isLoading, data: product } = useGetProductByIdQuery(Number(productID))
     const sales = useSales(product?.newPrice, product?.oldPrice)
 
     useLayoutEffect(() => {

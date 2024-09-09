@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
-import { useSelector } from "react-redux"
+import { useAppSelector } from '../../hooks/useAppSelector';
+
 
 export function Header() {
 
-	const cartCount = useSelector( ({ cart }: any) => cart.length)
+	const cartCount = useAppSelector(({cart}) => cart.length)
 
 	return (
 		<header className="header">

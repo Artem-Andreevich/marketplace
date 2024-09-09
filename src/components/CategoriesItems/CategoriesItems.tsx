@@ -1,22 +1,22 @@
-import { CatalogItem } from "../index"
+import { useGetProductsByCategoryQuery } from '../../store/api/api';
 import { useParams } from 'react-router-dom';
-import { IProduct } from '../../types';
+import { CatalogItem } from "../index"
 import { Loader } from '../Loader';
-import { useGetProductByCategoryQuery } from '../../store/api/api';
+
 
 export const CategoriesItems = () => {
 
     const { categoryID } = useParams()
-    const {isLoading, data: products } = useGetProductByCategoryQuery(categoryID)
+    const {isLoading, data: products } = useGetProductsByCategoryQuery(Number(categoryID))
 
     return (
         <div className='container'>
             {isLoading ? 
-                    <Loader /> :
+                <Loader /> :
                 <div className='catalog__items'>
-                    {products?.map((item: IProduct) => {
+                    {products?.map(item => {
                         return (
-                            <CatalogItem item={item} key={item.id}/>
+                            <CatalogItem product={item} key={item.id}/>
                         )
                     })}
                 </div>

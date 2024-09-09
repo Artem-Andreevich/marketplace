@@ -1,7 +1,7 @@
 import { useMemo } from "react"
-import { useDispatch } from "react-redux"
 import { bindActionCreators } from "redux"
 import { addProduct, removeProduct } from "../store/cart/cart.slice"
+import { useAppDispatch } from "./useAppDispatch"
 
 const rootActions = {
     addProduct,
@@ -9,7 +9,7 @@ const rootActions = {
 }
 
 export const useActions = () => {
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch()
     return useMemo( () => 
         bindActionCreators(rootActions, dispatch), [dispatch])
 }

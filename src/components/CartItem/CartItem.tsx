@@ -1,14 +1,14 @@
 import { useActions, useSales } from "../../hooks";
-import { IProduct } from "../../types";
+import { IProductCart } from "../../types";
 
 type CartItemProps = {
-    item: IProduct
+    item: IProductCart
 }
 
-export const CartItem = ({ item }: any) => {
+export const CartItem = ({ item }: CartItemProps) => {
 
     const { addProduct, removeProduct } = useActions()
-    const sales = useSales(item.newPrice, item.oldPrice)
+    const sales = useSales(item.product.newPrice, item.product.oldPrice)
 
     return (
         <div className="cart-item"> 

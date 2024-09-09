@@ -1,12 +1,11 @@
-import { IProduct } from "../../types/Product"
+import { useGetProductsByLabelQuery } from "../../store/api/api";
 import { CatalogItem } from "../index"
 import { Loader } from "../Loader";
-import { useGetProductByLabelQuery } from "../../store/api/api";
 
 
 export const PopularItems = () => {
 
-    const {isLoading, data: products} = useGetProductByLabelQuery('Хит')
+    const {isLoading, data: products} = useGetProductsByLabelQuery('Хит')
 
     return (
         <div className='popular-items'>
@@ -15,9 +14,9 @@ export const PopularItems = () => {
                 {isLoading ? 
                     <Loader /> :
                     <div className='catalog__items'>
-                        {products?.map((item: IProduct) => {
+                        {products?.map(item => {
                             return (
-                                <CatalogItem item={item} key={item.article}/>
+                                <CatalogItem product={item} key={item.article}/>
                             )
                         })}
                     </div>

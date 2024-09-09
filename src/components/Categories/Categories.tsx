@@ -1,7 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
-import { ICategories } from "../../types/Categories"
-import { Loader } from '../Loader';
 import { useGetCategoriesQuery } from '../../store/api/api';
+import { Loader } from '../Loader';
 
 
 export const Categories = () => {
@@ -16,7 +15,7 @@ export const Categories = () => {
                 {isLoading ? 
                     <Loader /> :
                     <ul className='categories__tile'>
-                        {categories.map((item: ICategories) => {
+                        {categories?.map( item => {
                             return (
                                 <li key={item.id} className='category-item'>
                                     <Link to={ isMainPage ? `categories/${item.id}` : `${item.id}`} className='category-item__link'>
