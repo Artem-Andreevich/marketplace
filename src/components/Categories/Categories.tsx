@@ -5,8 +5,8 @@ import { Loader } from '../Loader';
 
 export const Categories = () => {
 
-    const location = useLocation()
-    const isMainPage = location.pathname === '/'
+    // const location = useLocation()
+    // const isMainPage = location.pathname === '/'
     const { isLoading, data: categories} = useGetCategoriesQuery()
 
     return (
@@ -18,7 +18,11 @@ export const Categories = () => {
                         {categories?.map( item => {
                             return (
                                 <li key={item.id} className='category-item'>
-                                    <Link to={ isMainPage ? `categories/${item.id}` : `${item.id}`} className='category-item__link'>
+                                    <Link to={{
+                                        pathname: "products",
+                                        search: `?category=${item.url}`
+                                    }} className='category-item__link'>
+                                    {/* <Link to={ isMainPage ? `categories/${item.id}` : `${item.id}`} className='category-item__link'> */}
                                         <h2 className='category-item__title'>{item.name}</h2>
                                         <img src={item.img} className='category-item__pic' alt="" />
                                     </Link>

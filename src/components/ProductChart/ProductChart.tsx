@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState, SetStateAction } from 'react';
 import type { ChartData } from 'chart.js';
 import { Chart } from 'react-chartjs-2';
 import {
@@ -20,21 +20,39 @@ ChartJS.register(
   Filler
 );
 
+interface myChart {
+    datasets: [{
+        data: number[]
+    }],
+    labels: string[]
+}
 
 
 export function ProductChart({data}: any) {
-    console.log(data)
     const chartRef = useRef<ChartJS>(null);
-    const [chartData, setChartData] = useState<ChartData<'line'>>({
-        datasets: [],
+    const [chartData, setChartData] = useState<myChart>({
+        datasets: [{
+            data: []
+        }],
+        labels: []
     });
 
-    const dataChart = {
-        datasets: [{
-            data: [...data.prices]
-        }],
-        labels: [...data.months]
-    } 
+
+    useEffect(() => {
+        const chart = chartRef.current;
+        if (!chart) {
+        return;
+        }
+
+        const dataChart: myChart = {
+            datasets: [{
+                data: [...data.prices]
+            }],
+            labels: [...data.months]
+        } 
+        setChartData(dataChart);
+    }, [data]);
+
     
     const chartOptions: any = {
         responsive: true,
@@ -59,8 +77,8 @@ export function ProductChart({data}: any) {
                     },
                     
                     callback: function(value: any, index: any, ticks: any) {
-                        if(index === 0 || index === dataChart.labels.length - 1) {
-                            return `${dataChart.datasets[0].data[index]} ₽`
+                        if(index === 0 || index === chartData.labels.length - 1) {
+                            return `${chartData.datasets[0].data[index]} ₽`
                         }					
                     },
                 },
@@ -88,8 +106,8 @@ export function ProductChart({data}: any) {
                     },
                     
                     callback: function(value: any, index: any, ticks: any) {
-                        if(index === 0 || index === dataChart.labels.length - 1) {
-                            return dataChart.labels[index]
+                        if(index === 0 || index === chartData.labels.length - 1) {
+                            return chartData.labels[index]
                         }					
                     },
                 },
@@ -142,14 +160,7 @@ export function ProductChart({data}: any) {
         }
     }
 
-    useEffect(() => {
-        const chart = chartRef.current;
-        if (!chart) {
-        return;
-        }
 
-        setChartData(dataChart);
-    }, []);
 
     return <Chart ref={chartRef} type='line' data={chartData} options={chartOptions} />;
 }

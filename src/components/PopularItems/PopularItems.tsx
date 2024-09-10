@@ -5,7 +5,10 @@ import { Loader } from "../Loader";
 
 export const PopularItems = () => {
 
-    const {isLoading, data: products} = useGetProductsByLabelQuery('Хит')
+    const queryParams = (arg1: string, arg2: string) => {
+        return `${arg1}&_${arg2}`
+    }
+    const {isLoading, data: products} = useGetProductsByLabelQuery(queryParams("Хит", "limit=2"))
 
     return (
         <div className='popular-items'>

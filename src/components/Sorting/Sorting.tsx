@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { ISortingData } from "../../types"
 
 interface SortingProps {
@@ -8,7 +8,8 @@ interface SortingProps {
 export const Sorting = ({dataSort}: SortingProps) => {
 
     const categoryID = useParams()
-    console.log(dataSort)
+    const loca = useLocation()
+
 
 
     return (

@@ -79,76 +79,170 @@
 		{
 			"id": 101,
 			"categoriesID": 1,
+			"category": "iphone",
 			"article": "100101",
-			"name": "Apple iPhone 15",
-			"img": ["/images/iphone-15.webp"],
+			"name": "Apple iPhone 15 128gb Black",
+			"img": ["/images/iphone-15_black.webp", "/images/iphone-15_black_2.webp", "/images/iphone-15_black_3.webp"],
 			"label": "Новинка",
 			"oldPrice": 105000,
-			"newPrice": 95000
+			"newPrice": 95000,
+			"details" : {
+				"color": "Black",
+				"memory": "128"
+			},
+			"priceHistory": {
+				"prices": [95000, 105000, 86000, 150000, 99000, 88900],
+				"months": ["Январь 2024", "Февраль 2024", "Март 2024", "Август 2024", "Июль 2024", "Июнь 2024"]
+			},
+			"description": [
+				{"Процессор": ["Процессор: A16 Bionic"]},
+				{"Дисплей": ["Диагональ: 6,1", "Разрешение: 2556x1179", "Яркость: 2000 кд/м²", "Контрастность: 2000000:1", "Плотность пикселей на дюйм: 460 пикс/дюйм", "Тип дисплея: OLED", "Технологии дисплея: True Tone"]},
+				{"Связь": ["Сотовая связь: 5G (sub‑6 GHz), Gigabit Class LTE, GSM/EDGE", "Беспроводная связь: Wi‑Fi 6 (802.11ax)/WLAN, Bluetooth 5.3, NFC с поддержкой режима считывания, UMTS/ HSPA+/ DC-HSDPA, MIMO", "Навигация: GPS, ГЛОНАСС, Galileo, QZSS, BeiDou"]},
+				{"Питание": ["Тип аккумулятора: Li-Ion", "Разъём для зарядки: USB Type-C", "Зарядка: От сети, от компьютера, беспроводная (с помощью MagSafe и зарядных устройств стандарта Qi)"]},
+				{"Время работы": ["Воспроизведение видео: до 26 часов", "Просмотр видео в режиме стриминга: до 20 часов", "Воспроизведение аудио: до 75 часов"]},
+				{"Габариты и вес": ["Высота: 147,5 мм", "Ширина: 71,5 мм", "Толщина: 7,85 мм", "Вес: 206 г"]}
+			]
 		},
 		{
 			"id": 102,
 			"categoriesID": 1,
+			"category": "iphone",
 			"article": "100102",
-			"name": "Apple iPhone 15 Pro",
-			"img": ["/images/iphone-15.webp"],
+			"name": "Apple iPhone 15 128gb Blue",
+			"img": ["/images/iphone-15_blue.webp", "/images/iphone-15_blue_2.webp", "/images/iphone-15_blue_3.webp"],
 			"label": "Новинка",
 			"oldPrice": 105000,
-			"newPrice": 95000
+			"newPrice": 95000,
+			"details" : {
+				"color": "Blue",
+				"memory": "128"
+			},
+			"priceHistory": {
+				"prices": [95000, 105000, 86000, 150000, 99000, 88900],
+				"months": ["Январь 2024", "Февраль 2024", "Март 2024", "Август 2024", "Июль 2024", "Июнь 2024"]
+			},
+			"description": [
+				{"Процессор": ["Процессор: A16 Bionic"]},
+				{"Дисплей": ["Диагональ: 6,1", "Разрешение: 2556x1179", "Яркость: 2000 кд/м²", "Контрастность: 2000000:1", "Плотность пикселей на дюйм: 460 пикс/дюйм", "Тип дисплея: OLED", "Технологии дисплея: True Tone"]},
+				{"Связь": ["Сотовая связь: 5G (sub‑6 GHz), Gigabit Class LTE, GSM/EDGE", "Беспроводная связь: Wi‑Fi 6 (802.11ax)/WLAN, Bluetooth 5.3, NFC с поддержкой режима считывания, UMTS/ HSPA+/ DC-HSDPA, MIMO", "Навигация: GPS, ГЛОНАСС, Galileo, QZSS, BeiDou"]},
+				{"Питание": ["Тип аккумулятора: Li-Ion", "Разъём для зарядки: USB Type-C", "Зарядка: От сети, от компьютера, беспроводная (с помощью MagSafe и зарядных устройств стандарта Qi)"]},
+				{"Время работы": ["Воспроизведение видео: до 26 часов", "Просмотр видео в режиме стриминга: до 20 часов", "Воспроизведение аудио: до 75 часов"]},
+				{"Габариты и вес": ["Высота: 147,5 мм", "Ширина: 71,5 мм", "Толщина: 7,85 мм", "Вес: 206 г"]}
+			]
 		},
+		
 		{
 			"id": 103,
 			"categoriesID": 1,
+			"category": "iphone",
 			"article": "100103",
-			"name": "Apple iPhone 15 Pro Max",
-			"img": ["/images/iphone-15.webp"],
+			"name": "Apple iPhone 15 128gb Green",
+			"img": ["/images/iphone-15_green.webp", "/images/iphone-15_green_2.webp", "/images/iphone-15_green_3.webp"],
 			"label": "Хит",
 			"oldPrice": 105000,
-			"newPrice": 95000
+			"newPrice": 95000,
+			"details" : {
+				"color": "Green",
+				"memory": "128"
+			},
+			"priceHistory": {
+				"prices": [95000, 105000, 86000, 150000, 99000, 88900],
+				"months": ["Январь 2024", "Февраль 2024", "Март 2024", "Август 2024", "Июль 2024", "Июнь 2024"]
+			},
+			"description": [
+				{"Процессор": ["Процессор: A16 Bionic"]},
+				{"Дисплей": ["Диагональ: 6,1", "Разрешение: 2556x1179", "Яркость: 2000 кд/м²", "Контрастность: 2000000:1", "Плотность пикселей на дюйм: 460 пикс/дюйм", "Тип дисплея: OLED", "Технологии дисплея: True Tone"]},
+				{"Связь": ["Сотовая связь: 5G (sub‑6 GHz), Gigabit Class LTE, GSM/EDGE", "Беспроводная связь: Wi‑Fi 6 (802.11ax)/WLAN, Bluetooth 5.3, NFC с поддержкой режима считывания, UMTS/ HSPA+/ DC-HSDPA, MIMO", "Навигация: GPS, ГЛОНАСС, Galileo, QZSS, BeiDou"]},
+				{"Питание": ["Тип аккумулятора: Li-Ion", "Разъём для зарядки: USB Type-C", "Зарядка: От сети, от компьютера, беспроводная (с помощью MagSafe и зарядных устройств стандарта Qi)"]},
+				{"Время работы": ["Воспроизведение видео: до 26 часов", "Просмотр видео в режиме стриминга: до 20 часов", "Воспроизведение аудио: до 75 часов"]},
+				{"Габариты и вес": ["Высота: 147,5 мм", "Ширина: 71,5 мм", "Толщина: 7,85 мм", "Вес: 206 г"]}
+			]
 		},
 		{
 			"id": 104,
 			"categoriesID": 1,
+			"category": "iphone",
 			"article": "100104",
-			"name": "Apple iPhone 14",
-			"img": ["/images/iphone-15.webp"],
+			"name": "Apple iPhone 15 128gb Pink",
+			"img": ["/images/iphone-15_pink.webp", "/images/iphone-15_pink_2.webp", "/images/iphone-15_pink_3.webp"],
 			"label": "Хит",
 			"oldPrice": 105000,
-			"newPrice": 95000
+			"newPrice": 95000,
+			"details" : {
+				"color": "Pink",
+				"memory": "128"
+			},
+			"priceHistory": {
+				"prices": [95000, 105000, 86000, 150000, 99000, 88900],
+				"months": ["Январь 2024", "Февраль 2024", "Март 2024", "Август 2024", "Июль 2024", "Июнь 2024"]
+			},
+			"description": [
+				{"Процессор": ["Процессор: A16 Bionic"]},
+				{"Дисплей": ["Диагональ: 6,1", "Разрешение: 2556x1179", "Яркость: 2000 кд/м²", "Контрастность: 2000000:1", "Плотность пикселей на дюйм: 460 пикс/дюйм", "Тип дисплея: OLED", "Технологии дисплея: True Tone"]},
+				{"Связь": ["Сотовая связь: 5G (sub‑6 GHz), Gigabit Class LTE, GSM/EDGE", "Беспроводная связь: Wi‑Fi 6 (802.11ax)/WLAN, Bluetooth 5.3, NFC с поддержкой режима считывания, UMTS/ HSPA+/ DC-HSDPA, MIMO", "Навигация: GPS, ГЛОНАСС, Galileo, QZSS, BeiDou"]},
+				{"Питание": ["Тип аккумулятора: Li-Ion", "Разъём для зарядки: USB Type-C", "Зарядка: От сети, от компьютера, беспроводная (с помощью MagSafe и зарядных устройств стандарта Qi)"]},
+				{"Время работы": ["Воспроизведение видео: до 26 часов", "Просмотр видео в режиме стриминга: до 20 часов", "Воспроизведение аудио: до 75 часов"]},
+				{"Габариты и вес": ["Высота: 147,5 мм", "Ширина: 71,5 мм", "Толщина: 7,85 мм", "Вес: 206 г"]}
+			]
 		},
 		{
 			"id": 105,
 			"categoriesID": 1,
+			"category": "iphone",
 			"article": "100105",
-			"name": "Apple iPhone 14 Pro",
-			"img": ["/images/iphone-15.webp"],
+			"name": "Apple iPhone 15 128gb Yellow",
+			"img": ["/images/iphone-15_yellow.webp", "/images/iphone-15_yellow_2.webp", "/images/iphone-15_yellow_3.webp"],
 			"label": "Хит",
 			"oldPrice": 105000,
-			"newPrice": 95000
+			"newPrice": 95000,
+			"details" : {
+				"color": "Yellow",
+				"memory": "128"
+			},
+			"priceHistory": {
+				"prices": [95000, 105000, 86000, 150000, 99000, 88900],
+				"months": ["Январь 2024", "Февраль 2024", "Март 2024", "Август 2024", "Июль 2024", "Июнь 2024"]
+			},
+			"description": [
+				{"Процессор": ["Процессор: A16 Bionic"]},
+				{"Дисплей": ["Диагональ: 6,1", "Разрешение: 2556x1179", "Яркость: 2000 кд/м²", "Контрастность: 2000000:1", "Плотность пикселей на дюйм: 460 пикс/дюйм", "Тип дисплея: OLED", "Технологии дисплея: True Tone"]},
+				{"Связь": ["Сотовая связь: 5G (sub‑6 GHz), Gigabit Class LTE, GSM/EDGE", "Беспроводная связь: Wi‑Fi 6 (802.11ax)/WLAN, Bluetooth 5.3, NFC с поддержкой режима считывания, UMTS/ HSPA+/ DC-HSDPA, MIMO", "Навигация: GPS, ГЛОНАСС, Galileo, QZSS, BeiDou"]},
+				{"Питание": ["Тип аккумулятора: Li-Ion", "Разъём для зарядки: USB Type-C", "Зарядка: От сети, от компьютера, беспроводная (с помощью MagSafe и зарядных устройств стандарта Qi)"]},
+				{"Время работы": ["Воспроизведение видео: до 26 часов", "Просмотр видео в режиме стриминга: до 20 часов", "Воспроизведение аудио: до 75 часов"]},
+				{"Габариты и вес": ["Высота: 147,5 мм", "Ширина: 71,5 мм", "Толщина: 7,85 мм", "Вес: 206 г"]}
+			]
 		},
 		{
 			"id": 106,
 			"categoriesID": 1,
+			"category": "iphone",
 			"article": "100106",
-			"name": "Apple iPhone 14 Pro Max",
-			"img": ["/images/iphone-15.webp"],
+			"name": "Apple iPhone 15 512gb Black",
+			"img": ["/images/iphone-15_black.webp", "/images/iphone-15_black_2.webp", "/images/iphone-15_black_3.webp"],
 			"label": "Новинка",
 			"oldPrice": 105000,
-			"newPrice": 95000
-		},
-		{
-			"id": 201,
-			"categoriesID": 2,
-			"article": "100207",
-			"name": "Apple iPad 11",
-			"img": ["/images/ipad_pro_11.webp"],
-			"label": "Хит",
-			"oldPrice": 105000,
-			"newPrice": 95000
+			"newPrice": 95000,
+			"details" : {
+				"color": "Black",
+				"memory": "512"
+			},
+			"priceHistory": {
+				"prices": [95000, 105000, 86000, 150000, 99000, 88900],
+				"months": ["Январь 2024", "Февраль 2024", "Март 2024", "Август 2024", "Июль 2024", "Июнь 2024"]
+			},
+			"description": [
+				{"Процессор": ["A16 Bionic"]},
+				{"Дисплей": ["Диагональ: 6,1", "Разрешение: 2556x1179", "Яркость: 2000 кд/м²", "Контрастность: 2000000:1", "Плотность пикселей на дюйм: 460 пикс/дюйм", "Тип дисплея: OLED", "Технологии дисплея: True Tone"]},
+				{"Связь": ["Сотовая связь: 5G (sub‑6 GHz), Gigabit Class LTE, GSM/EDGE", "Беспроводная связь: Wi‑Fi 6 (802.11ax)/WLAN, Bluetooth 5.3, NFC с поддержкой режима считывания, UMTS/ HSPA+/ DC-HSDPA, MIMO", "Навигация: GPS, ГЛОНАСС, Galileo, QZSS, BeiDou"]},
+				{"Питание": ["Тип аккумулятора: Li-Ion", "Разъём для зарядки: USB Type-C", "Зарядка: От сети, от компьютера, беспроводная (с помощью MagSafe и зарядных устройств стандарта Qi)"]},
+				{"Время работы": ["Воспроизведение видео: до 26 часов", "Просмотр видео в режиме стриминга: до 20 часов", "Воспроизведение аудио: до 75 часов"]},
+				{"Габариты и вес": ["Высота: 147,5 мм", "Ширина: 71,5 мм", "Толщина: 7,85 мм", "Вес: 206 г"]}
+			]
 		},
 		{
 			"id": 202,
 			"categoriesID": 2,
+			"category": "ipad",
 			"article": "100208",
 			"name": "Apple iPad Air 10.9 (2022) M1 LTE 256gb Starlight",
 			"img": ["/images/iPad_Air_10.9_(2022)_M1_LTE_256gb_Starlight.webp", "/images/iPad_Air_10.9_(2022)_M1_LTE_256gb_Starlight_2.webp", "/images/iPad_Air_10.9_(2022)_M1_LTE_256gb_Starlight_3.webp"],
@@ -157,7 +251,7 @@
 			"newPrice": 95190,
 			"details" : {
 				"color": "Starlight",
-				"memory": "256GB"
+				"memory": "256"
 			},
 			"priceHistory": {
 				"prices": [20000, 31000, 43000, 35000, 34000, 44000],
@@ -167,6 +261,7 @@
 		{
 			"id": 203,
 			"categoriesID": 2,
+			"category": "ipad",
 			"article": "100209",
 			"name": "Apple iPad Air 10.9 (2022) M1 LTE 256gb Blue",
 			"img": ["/images/iPad_Air_10.9_(2022)_M1_LTE_256gb_Blue.webp", "/images/iPad_Air_10.9_(2022)_M1_LTE_256gb_Blue_2.webp", "/images/iPad_Air_10.9_(2022)_M1_LTE_256gb_Blue_3.webp"],
@@ -175,7 +270,7 @@
 			"newPrice": 88990,
 			"details" : {
 				"color": "Blue",
-				"memory": "256GB"
+				"memory": "256"
 			},
 			"priceHistory": {
 				"prices": [95000, 105000, 86000, 150000, 99000, 88900],
@@ -185,72 +280,124 @@
 		{
 			"id": 501,
 			"categoriesID": 5,
+			"category": "airpods",
 			"article": "100501",
 			"name": "Apple AirPods 3",
 			"img": ["/images/AirPods_3.webp"],
 			"label": "Хит",
 			"oldPrice": 14500,
-			"newPrice": 12500
+			"newPrice": 12500,
+			"details" : {
+				"color": "White"
+			}
 		},
 		{
 			"id": 502,
 			"categoriesID": 5,
+			"category": "airpods",
 			"article": "100502",
 			"name": "Apple AirPods Max Green",
 			"img": ["/images/AirPods_Max_Green.webp", "/images/AirPods_Max_Green_2.webp", "/images/AirPods_Max_Green_3.webp"],
 			"label": "Новинка",
 			"oldPrice": 49990,
-			"newPrice": 45990
+			"newPrice": 45990,
+			"details" : {
+				"color": "Green"
+			},
+			"priceHistory": {
+				"prices": [95000, 105000, 86000, 150000, 99000, 88900],
+				"months": ["Январь 2024", "Февраль 2024", "Март 2024", "Август 2024", "Июль 2024", "Июнь 2024"]
+			}
 		},
 		{
 			"id": 503,
 			"categoriesID": 5,
+			"category": "airpods",
 			"article": "100503",
 			"name": "Apple AirPods Max Silver",
 			"img": ["/images/AirPods_Max_Silver.webp", "/images/AirPods_Max_Silver_2.webp"],
 			"label": "Новинка",
 			"oldPrice": 49990,
-			"newPrice": 45990
+			"newPrice": 45990,
+			"details" : {
+				"color": "Silver"
+			},
+			"priceHistory": {
+				"prices": [95000, 105000, 86000, 150000, 99000, 88900],
+				"months": ["Январь 2024", "Февраль 2024", "Март 2024", "Август 2024", "Июль 2024", "Июнь 2024"]
+			}
 		},
 		{
 			"id": 504,
 			"categoriesID": 5,
+			"category": "airpods",
 			"article": "100504",
 			"name": "Apple AirPods Max Sky Blue",
 			"img": ["/images/AirPods_Max_Sky_blue.webp", "/images/AirPods_Max_Sky_blue_2.webp"],
 			"label": "Новинка",
 			"oldPrice": 49990,
-			"newPrice": 45990
+			"newPrice": 45990,
+			"details" : {
+				"color": "Sky Blue"
+			},
+			"priceHistory": {
+				"prices": [95000, 105000, 86000, 150000, 99000, 88900],
+				"months": ["Январь 2024", "Февраль 2024", "Март 2024", "Август 2024", "Июль 2024", "Июнь 2024"]
+			}
 		},
 		{
 			"id": 505,
 			"categoriesID": 5,
+			"category": "airpods",
 			"article": "100505",
 			"name": "Apple AirPods Max Space Gray",
 			"img": ["/images/AirPods_Max_Space_Gray.webp", "/images/AirPods_Max_Space_Gray_2.webp"],
 			"label": "Новинка",
 			"oldPrice": 49990,
-			"newPrice": 45990
+			"newPrice": 45990,
+			"details" : {
+				"color": "Space Gray"
+			},
+			"priceHistory": {
+				"prices": [95000, 105000, 86000, 150000, 99000, 88900],
+				"months": ["Январь 2024", "Февраль 2024", "Март 2024", "Август 2024", "Июль 2024", "Июнь 2024"]
+			}
 		},
 		{
 			"id": 506,
 			"categoriesID": 5,
+			"category": "airpods",
 			"article": "100506",
 			"name": "Apple AirPods Max Pink",
 			"img": ["/images/Apple_AirPods_Max_Pink.webp", "/images/Apple_AirPods_Max_Pink_2.webp"],
 			"label": "Новинка",
 			"oldPrice": 49990,
-			"newPrice": 45990
+			"newPrice": 45990,
+			"details" : {
+				"color": "Pink"
+			},
+			"priceHistory": {
+				"prices": [95000, 105000, 86000, 150000, 99000, 88900],
+				"months": ["Январь 2024", "Февраль 2024", "Март 2024", "Август 2024", "Июль 2024", "Июнь 2024"]
+			}
 		},
 		{
 			"id": 507,
 			"categoriesID": 5,
+			"category": "airpods",
 			"article": "100507",
 			"name": "Apple AirPods Pro 2021 MagSafe",
 			"img": ["/images/AirPods_Pro_2021_MagSafe.webp", "/images/AirPods_Pro_2021_MagSafe_2.webp", "/images/AirPods_Pro_2021_MagSafe_3.webp"],
 			"label": "Новинка",
 			"oldPrice": 23990,
-			"newPrice": 19990
+			"newPrice": 19990,
+			"details" : {
+				"color": "White"
+			},
+			"priceHistory": {
+				"prices": [95000, 105000, 86000, 150000, 99000, 88900],
+				"months": ["Январь 2024", "Февраль 2024", "Март 2024", "Август 2024", "Июль 2024", "Июнь 2024"]
+			}
 		}
 	]
 }
