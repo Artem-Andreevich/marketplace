@@ -14,6 +14,7 @@ export function Header() {
 						<nav>
 							<ul className="header__nav">
 								<li><Link to="/" className="page__menu-link">Главная</Link></li>
+								<li><Link to="categories" className="page__menu-link">Категории</Link></li>
 								<li><Link to="about" className="page__menu-link">О компании</Link></li>
 								<li><a className="page__menu-link" href="#">Акции и скидки</a></li>
 								<li><a className="page__menu-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Покупателям</a>

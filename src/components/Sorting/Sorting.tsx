@@ -23,10 +23,10 @@ export const Sorting = ({dataSort}: SortingProps) => {
                 </button>
                 <div className="sort-price d-none d-lg-flex">
                   <label className="sort-price__range"><span>Цена от</span>
-                    <input type="text" value={dataSort.minCoast}/>
+                    <input type="text" defaultValue={dataSort.minCoast} min={dataSort.minCoast} max={dataSort.maxCoast}/>
                   </label>
                   <label className="sort-price__range"><span>цена до </span>
-                    <input type="text" value={dataSort.maxCoast}/>
+                    <input type="text" value={dataSort.maxCoast} min={dataSort.minCoast} max={dataSort.maxCoast}/>
                   </label>
                 </div><a className="sort-dropdown" href="#" role="button"> 
                   <div className="sort-dropdown__label">Сортировать</div><span className="bold">Сначала дешевле</span></a>
