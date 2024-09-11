@@ -15,7 +15,6 @@ export interface IProduct {
         prices: number[],
         months: string[]
     },
-    // description: any
     description?: [{
         [key: string]: [value: []]
     }]

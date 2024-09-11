@@ -24,9 +24,6 @@ export function Header() {
 										<li><a className="dropdown-item" href="#">Something else here</a></li>
 									</ul>
 								</li>
-								<li><a className="page__menu-link" href="#">Сотрудничество</a></li>
-								<li><a className="page__menu-link" href="#">Пункты выдачи</a></li>
-								<li><a className="page__menu-link" href="#">Контакты</a></li>
 							</ul>
 						</nav>
 						<div className="header__callback"><a className="page__menu-link page__dotted" href="#" data-bs-toggle="modal" data-bs-target="#callback-modal">Обратная связь</a><a className="page__menu-link bold phone" href="tel:+79908007000">
