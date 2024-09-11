@@ -1,6 +1,6 @@
 export interface ISortingData {
-    minCoast: string,
-    maxCoast: string,
+    minCoast: number,
+    maxCoast: number,
     colors?: any,
     memory?: any
 }

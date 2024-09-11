@@ -16,15 +16,15 @@ export const CategoriesItems = () => {
 
     useEffect( () => {
         const sortingData: ISortingData = {
-            minCoast: String(products?.reduce((prev, curr) => prev.newPrice < curr.newPrice ? prev : curr ).newPrice),
-            maxCoast: String(products?.reduce((prev, curr) => prev.newPrice > curr.newPrice ? prev : curr ).newPrice),
+            minCoast: Number(products?.reduce((prev, curr) => prev.newPrice < curr.newPrice ? prev : curr ).newPrice),
+            maxCoast: Number(products?.reduce((prev, curr) => prev.newPrice > curr.newPrice ? prev : curr ).newPrice),
             colors: [...new Set(products?.map( item => item.details?.color))],
             memory: [...new Set(products?.map( item => item.details?.memory))],
         }
-       setInitionalSort(sortingData)
+        setInitionalSort(sortingData)
     },[isLoading])
-
-    console.log(initionalSort)
+    
+    console.log('123')
 
 
     return (

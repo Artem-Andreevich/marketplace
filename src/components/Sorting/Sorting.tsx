@@ -1,5 +1,7 @@
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { ISortingData } from "../../types"
+import { useEffect, useState } from "react";
+import { RangeSlider } from "../RangeSlider"
 
 interface SortingProps {
 	dataSort: ISortingData
@@ -7,9 +9,20 @@ interface SortingProps {
 
 export const Sorting = ({dataSort}: SortingProps) => {
 
+	// {/* Добавить все сорт данные в один state обьектом */}
+
+
 	console.log(dataSort)
 	const { search } = useLocation()
 	const navigate = useNavigate()
+
+
+	const [ value, setValue ] = useState<any>({min: 0, max: 100})
+	useEffect( () =>{
+		setValue({min: dataSort.minCoast, max: dataSort.maxCoast})
+	},[dataSort])
+
+
 
 	const handlerColor = (event: React.ChangeEvent<HTMLInputElement>) => {
 		event.target.checked ?
@@ -22,7 +35,8 @@ export const Sorting = ({dataSort}: SortingProps) => {
 		navigate( -1 )
 	}
 
-	
+
+
 
 	return (
 		<div className="sort">
@@ -38,14 +52,21 @@ export const Sorting = ({dataSort}: SortingProps) => {
 				</div>
 				<div>
 				{
-					dataSort.memory?.map( (item: any) => { return (
-					<label>
+					dataSort.memory?.map( (item: any, index:number) => { return (
+					<label key={index}>
 							<input type="checkbox" name={item} onChange={(event)=> handlerMemory(event)} />
 							<span>{item}</span>
 						</label>
 					)})
 					}
 				</div>
+
+				<RangeSlider min={value.min} max={value.max} step={1} value={value} onChange={setValue}/>
+				<p>The min value is: <span>{value.min}</span></p>
+				<p>The max value is: <span>{value.max}</span></p>
+
+
+
 			<div className="sort__main">
 				<button className="btn__open-filteActions
 				Settingsr d-lg-none" type="button">
@@ -55,10 +76,20 @@ export const Sorting = ({dataSort}: SortingProps) => {
 				</button>
 				<div className="sort-price d-none d-lg-flex">
 				<label className="sort-price__range"><span>Цена от</span>
-					<input type="text" defaultValue={dataSort.minCoast} min={dataSort.minCoast} max={dataSort.maxCoast}/>
+					<input 
+						type="text" 
+						// onBlur={(event)=> handlerPrices(event)}
+						value={value.min} 
+					/>
 				</label>
 				<label className="sort-price__range"><span>цена до </span>
-					<input type="text" value={dataSort.maxCoast} min={dataSort.minCoast} max={dataSort.maxCoast}/>
+					<input 
+							type="text" 
+							// onChange={(event)=> handlerPrices(event)}
+							defaultValue={dataSort.minCoast} 
+							min={dataSort.minCoast} 
+							max={dataSort.maxCoast}
+						/>
 				</label>
 				</div><a className="sort-dropdown" href="#" role="button"> 
 				<div className="sort-dropdown__label">Сортировать</div><span className="bold">Сначала дешевле</span></a>
