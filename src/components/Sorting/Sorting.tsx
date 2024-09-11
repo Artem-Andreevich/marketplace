@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { RangeSlider } from "../RangeSlider"
 
 interface SortingProps {
-	dataSort: ISortingData
+	dataSort: ISortingData,
 } 
 
 export const Sorting = ({dataSort}: SortingProps) => {
@@ -17,7 +17,8 @@ export const Sorting = ({dataSort}: SortingProps) => {
 	const navigate = useNavigate()
 
 
-	const [ value, setValue ] = useState<any>({min: 0, max: 100})
+	const [ value, setValue ] = useState<any>({min: dataSort.minCoast, max: dataSort.maxCoast})
+
 	useEffect( () =>{
 		setValue({min: dataSort.minCoast, max: dataSort.maxCoast})
 	},[dataSort])
@@ -43,25 +44,33 @@ export const Sorting = ({dataSort}: SortingProps) => {
 			<div>
 			{
 				dataSort.colors?.map( (item: any, index:number) => { return (
-				<label key={index}>
-						<input type="checkbox" name={item} onChange={(event)=> handlerColor(event)} />
-						<span>{item}</span>
-					</label>
+				<label className="page__checkbox" key={index}>
+					<input type="checkbox" name={item} onChange={(event)=> handlerColor(event)}/>
+					<svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 0.253167 0.253167">
+					  <rect fill="#ED4300" width="0.253167" height="0.253167" rx="0.0506327" ry="0.0506327"></rect>
+					  <polyline fill="none" stroke="white" stroke-width="0.0253182" stroke-linecap="round" stroke-linejoin="round" points="0.177213,0.0885956 0.113921,0.151887 0.0759509,0.113914 "></polyline>
+					</svg>
+					<span>{item}</span>
+				  </label>
 				)})
 				}
 				</div>
 				<div>
 				{
 					dataSort.memory?.map( (item: any, index:number) => { return (
-					<label key={index}>
-							<input type="checkbox" name={item} onChange={(event)=> handlerMemory(event)} />
-							<span>{item}</span>
-						</label>
+						<label className="page__checkbox" key={index}>
+                          <input type="checkbox" name={item} onChange={(event)=> handlerMemory(event)}/>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 0.253167 0.253167">
+                            <rect fill="#ED4300" width="0.253167" height="0.253167" rx="0.0506327" ry="0.0506327"></rect>
+                            <polyline fill="none" stroke="white" stroke-width="0.0253182" stroke-linecap="round" stroke-linejoin="round" points="0.177213,0.0885956 0.113921,0.151887 0.0759509,0.113914 "></polyline>
+                          </svg>
+						  <span>{item}</span>
+                        </label>
 					)})
 					}
 				</div>
 
-				<RangeSlider min={value.min} max={value.max} step={1} value={value} onChange={setValue}/>
+				<RangeSlider min={value.min} max={value.max} step={50} value={value} onChange={setValue}/>
 				<p>The min value is: <span>{value.min}</span></p>
 				<p>The max value is: <span>{value.max}</span></p>
 
@@ -85,10 +94,12 @@ export const Sorting = ({dataSort}: SortingProps) => {
 				<label className="sort-price__range"><span>цена до </span>
 					<input 
 							type="text" 
+							value={value.max} 
+
 							// onChange={(event)=> handlerPrices(event)}
-							defaultValue={dataSort.minCoast} 
-							min={dataSort.minCoast} 
-							max={dataSort.maxCoast}
+							// defaultValue={dataSort.minCoast} 
+							// min={dataSort.minCoast} 
+							// max={dataSort.maxCoast}
 						/>
 				</label>
 				</div><a className="sort-dropdown" href="#" role="button"> 

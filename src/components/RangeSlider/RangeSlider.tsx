@@ -8,7 +8,10 @@ interface RangeSliderProps {
         max: number
     }
     step: number
-    onChange: (setValue: {}) => void
+    onChange: (setValue: {
+        min: number
+        max: number
+    }) => void
 }
 export const RangeSlider = ({ min, max, value, step, onChange }: RangeSliderProps): React.ReactElement => {
 
@@ -38,6 +41,7 @@ export const RangeSlider = ({ min, max, value, step, onChange }: RangeSliderProp
 
   const minPos = ((minValue - min) / (max - min)) * 100;
   const maxPos = ((maxValue - min) / (max - min)) * 100;
+  console.log(maxPos)
 
   return (
     <div className="input-wrap">
