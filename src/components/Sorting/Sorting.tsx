@@ -12,7 +12,10 @@ export const Sorting = ({dataSort}: SortingProps) => {
 	// {/* Добавить все сорт данные в один state обьектом */}
 
 
-	console.log(dataSort)
+	console.log('Начало Sorting')
+	console.log(`Данные Sorting ${dataSort.colors || 'Нету данных'}`)
+
+
 	const { search } = useLocation()
 	const navigate = useNavigate()
 
@@ -37,18 +40,25 @@ export const Sorting = ({dataSort}: SortingProps) => {
 	}
 
 
+	console.log('Конец Sorting')
 
 
 	return (
 		<div className="sort">
 			<div>
+				{
+					console.log('Рендер Sorting')
+				}
+				{
+					console.log(`Данные Sorting ${dataSort.memory || 'Нету данных'}`)
+				}
 			{
 				dataSort.colors?.map( (item: any, index:number) => { return (
 				<label className="page__checkbox" key={index}>
 					<input type="checkbox" name={item} onChange={(event)=> handlerColor(event)}/>
 					<svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 0.253167 0.253167">
 					  <rect fill="#ED4300" width="0.253167" height="0.253167" rx="0.0506327" ry="0.0506327"></rect>
-					  <polyline fill="none" stroke="white" stroke-width="0.0253182" stroke-linecap="round" stroke-linejoin="round" points="0.177213,0.0885956 0.113921,0.151887 0.0759509,0.113914 "></polyline>
+					  <polyline fill="none" stroke="white" strokeWidth="0.0253182" strokeLinecap="round" strokeLinejoin="round" points="0.177213,0.0885956 0.113921,0.151887 0.0759509,0.113914 "></polyline>
 					</svg>
 					<span>{item}</span>
 				  </label>
@@ -62,7 +72,7 @@ export const Sorting = ({dataSort}: SortingProps) => {
                           <input type="checkbox" name={item} onChange={(event)=> handlerMemory(event)}/>
                           <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 0.253167 0.253167">
                             <rect fill="#ED4300" width="0.253167" height="0.253167" rx="0.0506327" ry="0.0506327"></rect>
-                            <polyline fill="none" stroke="white" stroke-width="0.0253182" stroke-linecap="round" stroke-linejoin="round" points="0.177213,0.0885956 0.113921,0.151887 0.0759509,0.113914 "></polyline>
+                            <polyline fill="none" stroke="white" strokeWidth="0.0253182" strokeLinecap="round" strokeLinejoin="round" points="0.177213,0.0885956 0.113921,0.151887 0.0759509,0.113914 "></polyline>
                           </svg>
 						  <span>{item}</span>
                         </label>

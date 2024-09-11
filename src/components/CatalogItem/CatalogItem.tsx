@@ -11,7 +11,7 @@ type CatalogItemProps = {
 
 export const CatalogItem = ({ product }: CatalogItemProps ) => {
 
-    const { cart } = useAppSelector( cart => cart)
+    const cart  = useAppSelector( state => state.cart)
     const [ counterValue, setCounterValue ] = useState(0)
     const { addProduct, removeProduct } = useActions()
     const sales = useSales(product.newPrice, product.oldPrice)

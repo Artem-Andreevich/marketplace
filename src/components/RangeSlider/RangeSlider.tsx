@@ -13,7 +13,10 @@ interface RangeSliderProps {
         max: number
     }) => void
 }
+
 export const RangeSlider = ({ min, max, value, step, onChange }: RangeSliderProps): React.ReactElement => {
+
+  console.log(`RandeSlider Входные: ${min}, ${max}, ${value.max}`)
 
   const [minValue, setMinValue] = useState(value ? value.min : min);
   const [maxValue, setMaxValue] = useState(value ? value.max : max);
@@ -38,10 +41,12 @@ export const RangeSlider = ({ min, max, value, step, onChange }: RangeSliderProp
     if (!value) setMaxValue(newMaxVal);
     onChange({ min: minValue, max: newMaxVal });
   };
+  console.log(`minValue: ${minValue}`)
+
 
   const minPos = ((minValue - min) / (max - min)) * 100;
   const maxPos = ((maxValue - min) / (max - min)) * 100;
-  console.log(maxPos)
+  console.log(`minPos: ${maxPos}`)
 
   return (
     <div className="input-wrap">

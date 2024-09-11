@@ -140,7 +140,7 @@
 			"img": ["/images/iphone-15_green.webp", "/images/iphone-15_green_2.webp", "/images/iphone-15_green_3.webp"],
 			"label": "Хит",
 			"oldPrice": 105000,
-			"newPrice": 95000,
+			"newPrice": 85000,
 			"details" : {
 				"color": "Green",
 				"memory": "128"
