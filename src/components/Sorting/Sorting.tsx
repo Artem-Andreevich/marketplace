@@ -1,7 +1,7 @@
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useLocation, useSearchParams } from "react-router-dom";
 import { ISortingData } from "../../types"
 import { useEffect, useState } from "react";
-import { RangeSlider } from "../RangeSlider"
+import CheckboxFilter from "./CheckboxFilter";
 
 interface SortingProps {
 	dataSort: ISortingData,
@@ -9,82 +9,82 @@ interface SortingProps {
 
 export const Sorting = ({dataSort}: SortingProps) => {
 
-	// {/* Добавить все сорт данные в один state обьектом */}
-
-
-	console.log('Начало Sorting')
-	console.log(`Данные Sorting ${dataSort.colors || 'Нету данных'}`)
-
-
-	const { search } = useLocation()
-	const navigate = useNavigate()
-
-
+	const location = useLocation()
+	const [ _, setSearchParams ] = useSearchParams();
 	const [ value, setValue ] = useState<any>({min: dataSort.minCoast, max: dataSort.maxCoast})
+	const queryParams = new URLSearchParams(location.search);
 
 	useEffect( () =>{
 		setValue({min: dataSort.minCoast, max: dataSort.maxCoast})
 	},[dataSort])
 
-
-
-	const handlerColor = (event: React.ChangeEvent<HTMLInputElement>) => {
-		event.target.checked ?
-		navigate({ search: `${search}&details.color=${event.target.name}` }) :
-		navigate( -1 )
-	}
-	const handlerMemory = (event: React.ChangeEvent<HTMLInputElement>) => {
-		event.target.checked ?
-		navigate({ search: `${search}&details.memory=${event.target.name}` }) :
-		navigate( -1 )
+	const filterQuery = {
+		color: 'details.color',
+		memory: 'details.memory',
+		minPrices: 'newPrice_gte',
+		maxPrices: 'newPrice_lte',
 	}
 
+	const onChangeInputMinValue = (event: React.ChangeEvent<HTMLInputElement>) => {
+		if( event.target.value >= value.max ) {
+			console.log('to much')
 
-	console.log('Конец Sorting')
+		}
+		else
+			setValue({min: event.target.value, max: value.max})
 
+	}
+
+	const checkboxFilter = (event: React.ChangeEvent<HTMLInputElement>, filterBy: any) => {
+		if (event.target.checked) {
+			queryParams.set(filterBy, event.target.name)
+			setSearchParams(queryParams)
+		}
+		else
+			queryParams.delete(filterBy)
+			setSearchParams(queryParams)
+	}
+
+	const minMaxPriceFilter = (filterBy: any, data: any) => {
+		if(value.min < dataSort.minCoast || value.min > dataSort.maxCoast ) {
+			queryParams.has(filterBy) ?
+				setValue({...value, min: queryParams.get(filterQuery.minPrices)}) :
+				setValue({...value, min: dataSort.minCoast}) 
+			return
+		} 
+		if(value.max > dataSort.maxCoast || value.max < dataSort.minCoast ) {
+			queryParams.has(filterBy) ?
+				setValue({...value, max: queryParams.get(filterQuery.maxPrices)}) :
+				setValue({...value, max: dataSort.maxCoast}) 
+			return
+		}
+		if(queryParams.has(filterBy)) {
+			queryParams.delete(filterBy)
+			queryParams.append(filterBy, data)
+			setSearchParams(queryParams)
+		}
+		else
+			queryParams.append(filterBy, data)
+			setSearchParams(queryParams)
+	}
 
 	return (
 		<div className="sort">
-			<div>
-				{
-					console.log('Рендер Sorting')
-				}
-				{
-					console.log(`Данные Sorting ${dataSort.memory || 'Нету данных'}`)
-				}
-			{
-				dataSort.colors?.map( (item: any, index:number) => { return (
-				<label className="page__checkbox" key={index}>
-					<input type="checkbox" name={item} onChange={(event)=> handlerColor(event)}/>
-					<svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 0.253167 0.253167">
-					  <rect fill="#ED4300" width="0.253167" height="0.253167" rx="0.0506327" ry="0.0506327"></rect>
-					  <polyline fill="none" stroke="white" strokeWidth="0.0253182" strokeLinecap="round" strokeLinejoin="round" points="0.177213,0.0885956 0.113921,0.151887 0.0759509,0.113914 "></polyline>
-					</svg>
-					<span>{item}</span>
-				  </label>
-				)})
-				}
-				</div>
-				<div>
-				{
-					dataSort.memory?.map( (item: any, index:number) => { return (
-						<label className="page__checkbox" key={index}>
-                          <input type="checkbox" name={item} onChange={(event)=> handlerMemory(event)}/>
-                          <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 0.253167 0.253167">
-                            <rect fill="#ED4300" width="0.253167" height="0.253167" rx="0.0506327" ry="0.0506327"></rect>
-                            <polyline fill="none" stroke="white" strokeWidth="0.0253182" strokeLinecap="round" strokeLinejoin="round" points="0.177213,0.0885956 0.113921,0.151887 0.0759509,0.113914 "></polyline>
-                          </svg>
-						  <span>{item}</span>
-                        </label>
-					)})
-					}
-				</div>
 
-				<RangeSlider min={value.min} max={value.max} step={50} value={value} onChange={setValue}/>
-				<p>The min value is: <span>{value.min}</span></p>
-				<p>The max value is: <span>{value.max}</span></p>
-
-
+			{dataSort.colors.length > 1 ? 
+				<CheckboxFilter 
+					checkboxs={dataSort.colors} 
+					sortFn={(event: React.ChangeEvent<HTMLInputElement>) => {checkboxFilter(event, filterQuery.color)}}
+				/>
+				: null
+			}
+			{dataSort.memory.length > 1 ? 
+				<CheckboxFilter 
+					checkboxs={dataSort.memory} 
+					sortFn={(event: React.ChangeEvent<HTMLInputElement>) => {checkboxFilter(event, filterQuery.memory)}}
+				/>
+				: null
+			}
 
 			<div className="sort__main">
 				<button className="btn__open-filteActions
@@ -97,19 +97,17 @@ export const Sorting = ({dataSort}: SortingProps) => {
 				<label className="sort-price__range"><span>Цена от</span>
 					<input 
 						type="text" 
-						// onBlur={(event)=> handlerPrices(event)}
 						value={value.min} 
+						onChange={(event)=> {setValue({...value, min: event.target.value })}}
+						onBlur={() => {minMaxPriceFilter(filterQuery.minPrices, value.min)}}
 					/>
 				</label>
 				<label className="sort-price__range"><span>цена до </span>
 					<input 
-							type="text" 
-							value={value.max} 
-
-							// onChange={(event)=> handlerPrices(event)}
-							// defaultValue={dataSort.minCoast} 
-							// min={dataSort.minCoast} 
-							// max={dataSort.maxCoast}
+						type="text" 
+						onBlur={() => {minMaxPriceFilter(filterQuery.maxPrices, value.max)}}
+						value={value.max} 
+						onChange={(event)=> {setValue({...value, max: event.target.value})}}
 						/>
 				</label>
 				</div><a className="sort-dropdown" href="#" role="button"> 

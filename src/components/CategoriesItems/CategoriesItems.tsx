@@ -8,10 +8,10 @@ import { useEffect, useState } from 'react';
 
 export const CategoriesItems = () => {
 
-    console.log('Начало CategoriesItem')
+    // console.log('Начало CategoriesItem')
 
     const { search } = useLocation()
-    const { isLoading, data: products, isSuccess } = useGetProductsByQuery(search)
+    const { isLoading, data: products } = useGetProductsByQuery(search)
     const [ initionalSort, setInitionalSort ] = useState<any>()
 
 
@@ -24,14 +24,14 @@ export const CategoriesItems = () => {
             memory: [...new Set(products?.map( item => item.details?.memory))],
         }
         setInitionalSort(sortingData)
-        console.log('Сработал useEffect')
-        console.log(`Данные ${initionalSort}`)
+        // console.log('Сработал useEffect')
+        // console.log(`Данные ${initionalSort}`)
 
     },[isLoading])
     
-    console.log('Конец CategoriesItem')
-    console.log(isSuccess)
-    console.log(isLoading ? "Данных ПРОДУКТА еще нет" : "Загрузились данные ПРОДУКТА" )
+    // console.log('Конец CategoriesItem')
+    // console.log(isSuccess)
+    // console.log(isLoading ? "Данных ПРОДУКТА еще нет" : "Загрузились данные ПРОДУКТА" )
 
 
     return (
@@ -39,10 +39,10 @@ export const CategoriesItems = () => {
             {isLoading ? 
                 <Loader /> :
                 <> 
-                    { console.log('Рендер сортировки') }
+                    {/* { console.log('Рендер сортировки') } */}
+                    <Sorting dataSort={initionalSort}/>
                     {products?.length ?
                         <>
-                            <Sorting dataSort={initionalSort}/>
                             <div className='catalog__items'>
                                 {products.map(item => {
                                     return (
