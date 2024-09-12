@@ -24,7 +24,7 @@ export const CatalogItem = ({ product }: CatalogItemProps ) => {
 
     return (
         <div className='catalog-item'>
-            <div className='catalog-item__label'>{product.label}</div>
+            {product.label ? <div className='catalog-item__label'>{product.label}</div> : null}
             <div className='catalog-item__add-to'>
                 <button className="add-to active" type="button">
                     <svg className="icon-fill" width="28px" height="24px"><use xlinkHref="#fav"></use></svg>

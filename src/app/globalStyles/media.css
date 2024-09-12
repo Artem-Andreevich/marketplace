@@ -301,9 +301,6 @@
     justify-content: start;
     margin-top: 0;
   }
-  .product__add-cart .add-cart, .product__add-cart .counter {
-    height: 40px;
-  }
   .product__inner {
     gap: 20px;
   }

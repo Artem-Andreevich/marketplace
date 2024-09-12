@@ -1,15 +1,28 @@
-import { useLayoutEffect } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
 import { useGetProductByIdQuery } from "../../store/api/api";
-import { useSales } from "../../hooks";
+import { useActions, useSales } from "../../hooks";
 import { Loader } from "../Loader";
 import { ProductChart } from "../ProductChart/ProductChart"
+import { useAppSelector } from "../../hooks/useAppSelector";
 
 
 export const Product = () => {
 
+    const cart  = useAppSelector( state => state.cart)
+    const { addProduct, removeProduct } = useActions()
+    const [ counterValue, setCounterValue ] = useState(0)
+
+ 
     const { productID } = useParams()
     const { isLoading, data: product } = useGetProductByIdQuery(Number(productID))
+
+    useEffect( () => {
+        const productIndex: number = cart.findIndex(item => item.product.id === product?.id)
+        const countItemInCart: number = cart[productIndex]?.productCount
+        setCounterValue(countItemInCart)
+    },[cart, product?.id])
+
     const sales = useSales(product?.newPrice, product?.oldPrice)
 
     useLayoutEffect(() => {
@@ -97,19 +110,35 @@ export const Product = () => {
                                         <div className="price__new">{product.newPrice} ₽</div>
                                     </div>
                                     <div className="product__add-cart">
-                                        <button className="add-cart" type="button"><span>В корзину</span>
+                                        <button className="add-cart" 
+                                            type="button"
+                                            onClick={() => addProduct(product)}
+                                        >
+                                            <span>В корзину</span>
                                             <svg className="icon" width="24px" height="28px">
                                                 <use xlinkHref="#add-cart"></use>
                                             </svg>
                                         </button>
-                                        <div className="counter js-counter">
-                                            <button className="counter__dec js-dec" type="button">
+                                        <div className={ counterValue ? "counter" : "counter hidden"}>
+                                            <button 
+                                                className="counter__dec" 
+                                                onClick={() => removeProduct(product)}
+                                                type="button"
+                                            >
                                                 <svg className="icon" width="16px" height="4px">
                                                     <use xlinkHref="#counter-dec"></use>
                                                 </svg>
                                             </button>
-                                            {/* <input type="text" value="1" maxlength="2" /> */}
-                                            <button className="counter__inc js-inc" type="button">
+                                            <input 
+                                                type="text" 
+                                                value={counterValue} 
+                                                readOnly
+                                            />
+                                            <button 
+                                                className="counter__inc" 
+                                                type="button"
+                                                onClick={() => addProduct(product)}
+                                            >
                                                 <svg className="icon" width="16px" height="16px">
                                                     <use xlinkHref="#counter-inc"></use>
                                                 </svg>
