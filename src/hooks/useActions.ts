@@ -1,11 +1,14 @@
 import { useMemo } from "react"
 import { bindActionCreators } from "redux"
 import { addProduct, removeProduct } from "../store/cart/cart.slice"
+import { toggleFavorite, removeFavorites } from "../store/favorites/favorites.slice"
 import { useAppDispatch } from "./useAppDispatch"
 
 const rootActions = {
     addProduct,
-    removeProduct
+    removeProduct,
+    toggleFavorite,
+    removeFavorites
 }
 
 export const useActions = () => {

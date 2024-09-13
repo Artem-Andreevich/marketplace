@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom"
-import { AboutPage, MainPage, CategoriesInnerPage, ProductPage, CategoriesPage, CartPage} from "../pages"
+import { AboutPage, MainPage, CategoriesInnerPage, ProductPage, CategoriesPage, CartPage, FavoritesPage} from "../pages"
 import { Layout } from "../hoc"
 
 
@@ -17,6 +17,7 @@ export const AppRouter = () => {
 				<Route path="categories/:categoryID" element={<CategoriesInnerPage />} />
 				<Route path="product/:productID" element={<ProductPage />} />
 				<Route path="cart" element={<CartPage />} />
+				<Route path="favorites" element={<FavoritesPage />} />
 			</Route>
 		</Routes>
     )

@@ -10,8 +10,10 @@ import { useAppSelector } from "../../hooks/useAppSelector";
 export const Product = () => {
 
     const cart  = useAppSelector( state => state.cart)
-    const { addProduct, removeProduct } = useActions()
+    const favorites  = useAppSelector( state => state.favorites)
+    const { addProduct, removeProduct, toggleFavorite } = useActions()
     const [ counterValue, setCounterValue ] = useState(0)
+    const [ isFavorites, setIsFavorites ] = useState(false)
 
  
     const { productID } = useParams()
@@ -22,6 +24,11 @@ export const Product = () => {
         const countItemInCart: number = cart[productIndex]?.productCount
         setCounterValue(countItemInCart)
     },[cart, product?.id])
+
+    useEffect( () => {
+        const isFavorites: boolean = favorites.some(item => item.id === product?.id)
+        setIsFavorites(isFavorites)
+    },[favorites, product?.id])
 
     const sales = useSales(product?.newPrice, product?.oldPrice)
 
@@ -49,7 +56,10 @@ export const Product = () => {
                                         )}
                                     </div>
                                     <div className="product__add-to">
-                                        <button>
+                                        <button 
+                                            className={isFavorites ? "add-to active" : "add-to"}
+                                            onClick={() => {toggleFavorite(product)}}
+                                        >
                                             <svg className="icon-fill" width="28px" height="24px">
                                                 <use xlinkHref="#fav"></use>
                                             </svg>

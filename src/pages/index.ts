@@ -4,3 +4,4 @@ export * from "./CategoriesPage";
 export * from "./MainPage";
 export * from "./ProductPage";
 export * from "./CartPage";
+export * from "./FavoritesPage";

@@ -4,7 +4,8 @@ import { useAppSelector } from '../../hooks/useAppSelector';
 
 export function Header() {
 
-	const cartCount = useAppSelector(({cart}) => cart.length)
+	const cartCount = useAppSelector( state => state.cart.length)
+	const favoritesCount = useAppSelector( state => state.favorites.length)
 
 	return (
 		<header className="header">
@@ -66,24 +67,33 @@ export function Header() {
 											<use xlinkHref="#user"></use>
 										</svg>
 									</div></a></li>
-								<li><a className="control__item" href="#">
-									<div className="control__icon">
-										<svg className="icon-fill control-icon" width="28px" height="24px">
-											<use xlinkHref="#fav"></use>
-										</svg><span className="control__label"></span>
-									</div></a></li>
+								<li>
+									<Link to={"favorites"} className="control__item">
+										<div className="control__icon">
+											<svg className="icon-fill control-icon" width="28px" height="24px">
+												<use xlinkHref="#fav"></use>
+											</svg>
+											<span className="control__label">{favoritesCount > 0 ? favoritesCount : null}</span>
+										</div>
+									</Link>
+								</li>
 								<li><a className="control__item" href="#">
 									<div className="control__icon">
 										<svg className="icon control-icon" width="28px" height="24px">
 											<use xlinkHref="#compare"></use>
-										</svg><span className="control__label"></span>
+										</svg>
+										<span className="control__label"></span>
 									</div></a></li>
-								<li><Link to={'/cart'} className="control__item">
-									<div className="control__icon">
-										<svg className="icon control-icon" width="24px" height="30px">
-											<use xlinkHref="#basket"></use>
-										</svg><span className="control__label">{cartCount > 0 ? cartCount : null}</span>
-									</div><span>Корзина</span></Link></li>
+								<li>
+									<Link to={'/cart'} className="control__item">
+										<div className="control__icon">
+											<svg className="icon control-icon" width="24px" height="30px">
+												<use xlinkHref="#basket"></use>
+											</svg>
+											<span className="control__label">{cartCount > 0 ? cartCount : null}</span>
+										</div><span>Корзина</span>
+									</Link>
+								</li>
 							</ul>
 						</div>
 					</div>

@@ -12,9 +12,15 @@ type CatalogItemProps = {
 export const CatalogItem = ({ product }: CatalogItemProps ) => {
 
     const cart  = useAppSelector( state => state.cart)
+    const favorites  = useAppSelector( state => state.favorites)
     const [ counterValue, setCounterValue ] = useState(0)
-    const { addProduct, removeProduct } = useActions()
-    const sales = useSales(product.newPrice, product.oldPrice)
+    const [ isFavorites, setIsFavorites ] = useState(false)
+    const { addProduct, removeProduct, toggleFavorite } = useActions()
+
+    useEffect( () => {
+        const isFavorites: boolean = favorites.some(item => item.id === product.id)
+        setIsFavorites(isFavorites)
+    },[favorites, product.id])
 
     useEffect( () => {
         const productIndex: number = cart.findIndex(item => item.product.id === product.id)
@@ -22,11 +28,18 @@ export const CatalogItem = ({ product }: CatalogItemProps ) => {
         setCounterValue(countItemInCart)
     },[cart, product.id])
 
+    const sales = useSales(product.newPrice, product.oldPrice)
+
+
     return (
         <div className='catalog-item'>
             {product.label ? <div className='catalog-item__label'>{product.label}</div> : null}
             <div className='catalog-item__add-to'>
-                <button className="add-to active" type="button">
+                <button 
+                    type="button"
+                    className={isFavorites ? "add-to active" : "add-to" }
+                    onClick={() => {toggleFavorite(product)}}
+                >
                     <svg className="icon-fill" width="28px" height="24px"><use xlinkHref="#fav"></use></svg>
                 </button>
                 <button className="add-to" type="button">
