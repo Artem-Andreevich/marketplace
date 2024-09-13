@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useGetCategoriesQuery } from '../../store/api/api';
 import { Loader } from '../Loader';
 

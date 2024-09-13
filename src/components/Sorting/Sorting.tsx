@@ -3,19 +3,16 @@ import { ISortingData } from "../../types"
 import { useEffect, useState } from "react";
 
 
-interface SortingProps {
-	dataSort: ISortingData,
-} 
+// interface SortingProps {
+// 	dataSort: ISortingData,
+// } 
 
-export const Sorting = ({dataSort}: SortingProps) => {
+export const Sorting = () => {
 
 	// const location = useLocation()
 	// const [ _, setSearchParams ] = useSearchParams();
 	// const [ value, setValue ] = useState<any>({min: dataSort.minCoast, max: dataSort.maxCoast})
 	// const queryParams = new URLSearchParams(location.search);
-
-
-
 
 	return (
 		<div className="sort">

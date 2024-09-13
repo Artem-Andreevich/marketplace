@@ -1,5 +1,5 @@
 import { useGetProductsByQuery } from '../../store/api/api';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useSearchParams } from 'react-router-dom';
 import { CatalogItem, Sorting } from "../index"
 import { Loader } from '../Loader';
 import { ISortingData } from '../../types';
@@ -10,33 +10,37 @@ import { CatalogFilter } from '../CatalogFilter';
 export const CategoriesItems = () => {
 
     const { search } = useLocation()
-    const { isLoading, data: products } = useGetProductsByQuery(search)
-    const [ initionalSort, setInitionalSort ] = useState<any>()
+    // const [ searchParams, setSearchParams ] = useSearchParams(search);
+    // console.log(searchParams)
+	// const queryParams = new URLSearchParams(search);
+    const { isLoading, data: data } = useGetProductsByQuery(search)
+    // const [ initionalSort, setInitionalSort ] = useState<any>()
+    // console.log(data.products)
+    
+    // useEffect( () => {
+    //     const sortingData: ISortingData = {
+    //         minCoast: Number(products?.reduce((prev, curr) => prev.newPrice < curr.newPrice ? prev : curr ).newPrice),
+    //         maxCoast: Number(products?.reduce((prev, curr) => prev.newPrice > curr.newPrice ? prev : curr ).newPrice),
+    //         colors: [...new Set(products?.map( item => item.details?.color))],
+    //         memory: [...new Set(products?.map( item => item.details?.memory))],
+    //     }
+    //     setInitionalSort(sortingData)
 
-    useEffect( () => {
-        const sortingData: ISortingData = {
-            minCoast: Number(products?.reduce((prev, curr) => prev.newPrice < curr.newPrice ? prev : curr ).newPrice),
-            maxCoast: Number(products?.reduce((prev, curr) => prev.newPrice > curr.newPrice ? prev : curr ).newPrice),
-            colors: [...new Set(products?.map( item => item.details?.color))],
-            memory: [...new Set(products?.map( item => item.details?.memory))],
-        }
-        setInitionalSort(sortingData)
-
-    },[isLoading])
+    // },[isLoading])
     
     return (
         <div className='container'>
             {isLoading ? 
                 <Loader /> :
                 <> 
-                    <Sorting dataSort={initionalSort}/>
+                    <Sorting />
                     <div className="catalog">
-                        <CatalogFilter dataSort={initionalSort}/>
-                        {products?.length ?
+                        <CatalogFilter dataSort={data.filters}/>
+                        {data.products?.length ?
                             <>
                                 <div className='catalog__items'>
                                     
-                                    {products.map(item => {
+                                    {data.products.map((item: any) => {
                                         return (
                                             <CatalogItem product={item} key={item.id}/>
                                         )

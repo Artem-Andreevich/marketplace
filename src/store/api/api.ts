@@ -10,8 +10,23 @@ export const apiSlice = createApi({
         getProducts: builder.query<IProduct[], void>({
             query: () => `products`
         }),
-        getProductsBy: builder.query<IProduct[], string>({
-            query: (queryParams) => `products/${queryParams}`
+        getProductsBy: builder.query<any, any>({
+            query: (queryParams) => `products/${queryParams}`,
+            // forceRefetch({ currentArg, previousArg, state, endpointState}): any {
+            //     // return currentArg !== previousArg
+            //     console.log(currentArg, previousArg, state, endpointState)
+            // },
+            transformResponse: (response: IProduct[], meta, arg): any => { 
+                return {
+                    products: [...response],
+                    filters: {
+                        minCoast: Number(response?.reduce((prev, curr) => prev.newPrice < curr.newPrice ? prev : curr ).newPrice),
+                        maxCoast: Number(response?.reduce((prev, curr) => prev.newPrice > curr.newPrice ? prev : curr ).newPrice),
+                        colors: [...new Set(response?.map( item => item.details?.color))],
+                        memory: [...new Set(response?.map( item => item.details?.memory))],
+                    }
+                }
+            }
         }),
         getProductById: builder.query<IProduct, number>({
             query: (id) => `products/${id}`

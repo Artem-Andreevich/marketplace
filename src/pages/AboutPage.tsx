@@ -35,7 +35,7 @@ export const AboutPage = () => {
             <Breadcrumbs />
             <div className='container'>
                 <h2 className='popular-items__title'>Все товары</h2>
-                    {isLoading ? 
+                    {/* {isLoading ? 
                         <Loader /> : 
                         products?.length ? 
                             <div className='catalog__items'>
@@ -44,7 +44,7 @@ export const AboutPage = () => {
                                 ))}
                             </div> :
                             <span>Товары не найдены</span>
-                    }
+                    } */}
             </div>
         </main>
     );
