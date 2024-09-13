@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { ICategories, IProduct } from '../../types';
+import { ICategories, ICategoryFilters, IProduct } from '../../types';
 
 const API_URL = "http://localhost:3001"
 
@@ -28,6 +28,9 @@ export const apiSlice = createApi({
                 }
             }
         }),
+        getCategoriesFilters: builder.query<ICategoryFilters[], string>({
+            query: (category) => `categoryFilters/?category=${category}`
+        }),
         getProductById: builder.query<IProduct, number>({
             query: (id) => `products/${id}`
         }),
@@ -49,7 +52,8 @@ export const {
     useGetProductByIdQuery, 
     useGetProductsByLabelQuery, 
     useGetProductsByCategoryQuery,  
-    useGetProductsByQuery
+    useGetProductsByQuery,
+    useGetCategoriesFiltersQuery,
 } = apiSlice
 
 

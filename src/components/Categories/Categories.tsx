@@ -22,7 +22,6 @@ export const Categories = () => {
                                         pathname: "products",
                                         search: `?category=${item.url}`
                                     }} className='category-item__link'>
-                                    {/* <Link to={ isMainPage ? `categories/${item.id}` : `${item.id}`} className='category-item__link'> */}
                                         <h2 className='category-item__title'>{item.name}</h2>
                                         <img src={item.img} className='category-item__pic' alt="" />
                                     </Link>

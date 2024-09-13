@@ -75,6 +75,24 @@
 			"url": "gadget"
 		}
 	],
+	"categoryFilters": [
+		{
+		  "id": 1,
+		  "category": "iphone",
+		  "filterBy": "color",
+		  "filterName": "Цвет",
+		  "type": "checkbox",
+		  "value": ["Black", "Blue", "Green", "Pink"]
+		},
+		{
+		  "id": 2,
+		  "category": "iphone",
+		  "filterBy": "memory",
+		  "filterName": "Память",
+		  "type": "checkbox",
+		  "value": ["64", "128", "256", "512", "1024"]
+		}
+	],
 	"products": [
 		{
 			"id": 101,

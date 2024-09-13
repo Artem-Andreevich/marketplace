@@ -2,6 +2,8 @@ import { useLocation, useSearchParams } from "react-router-dom";
 import { ISortingData } from "../../types"
 import { useEffect, useState } from "react";
 import CheckboxFilter from "./CheckboxFilter";
+import { useGetCategoriesFiltersQuery } from "../../store/api/api";
+import { Loader } from "../Loader";
 
 interface SortingProps {
 	dataSort: ISortingData,
@@ -11,14 +13,17 @@ export const CatalogFilter = ({dataSort}: SortingProps) => {
 
 	const location = useLocation()
 	const [ _, setSearchParams ] = useSearchParams();
-	const [ value, setValue ] = useState<any>({min: dataSort.minCoast, max: dataSort.maxCoast})
 	const queryParams = new URLSearchParams(location.search);
+	const { isLoading, data: filters } = useGetCategoriesFiltersQuery(queryParams.get("category") || "")
+	const [ value, setValue ] = useState<any>({min: dataSort.minCoast, max: dataSort.maxCoast})
+    console.log(filters)
+    console.log(dataSort)
 
 	useEffect( () =>{
 		setValue({min: dataSort.minCoast, max: dataSort.maxCoast})
 	},[dataSort])
 
-	const filterQuery = {
+	const filterQuery: any = {
 		color: 'details.color',
 		memory: 'details.memory',
 		minPrices: 'newPrice_gte',
@@ -58,6 +63,23 @@ export const CatalogFilter = ({dataSort}: SortingProps) => {
 			setSearchParams(queryParams)
 	}
 
+
+
+    // const [checked, setChecked] = useState<any>({});
+
+	// const onSelectedChange = (event: React.ChangeEvent<HTMLInputElement>, index: any, sort: any) => {
+	// 	checkboxFilter(event, sort)
+    //     setChecked((previousState: any) => ({
+    //         ...previousState,
+    //         [index]: !previousState[index]
+    //     }));
+	// };
+  
+	// const checkedCount = Object.keys(checked).filter(key => checked[key]).length;
+	// const disabled = checkedCount >= 1;
+
+
+
 	return (
 		<div className="filters">
 
@@ -83,7 +105,41 @@ export const CatalogFilter = ({dataSort}: SortingProps) => {
 				</div>
 			</div>
 
-			{dataSort.colors.length > 1 ? 
+			{filters?.map((item): any => {
+				if(item.type === "checkbox")
+					return (
+						<div className="filters__item">
+							<h4 className="filters__name">{item.filterName}</h4>
+							<div className="filters__checkboxs">
+								{/* {item.value.map((value, index) => {
+									if(dataSort.colors.includes(value))
+										return (
+											<label className="page__checkbox" key={value}>
+												<input type="checkbox" name={value} 
+												onChange={(event) => onSelectedChange(event, index, filterQuery[item.filterBy])}
+												checked={checked[index] || false}
+												disabled={!checked[index] && disabled}
+												/>
+												<svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 0.253167 0.253167">
+												<rect fill="#ED4300" width="0.253167" height="0.253167" rx="0.0506327" ry="0.0506327"></rect>
+												<polyline fill="none" stroke="white" strokeWidth="0.0253182" strokeLinecap="round" strokeLinejoin="round" points="0.177213,0.0885956 0.113921,0.151887 0.0759509,0.113914 "></polyline>
+												</svg>
+												<span>{value}</span>
+											</label>
+										)
+									}) 
+								} */}
+								<CheckboxFilter 
+									checkboxs={item.value} 
+									sortFn={(event: React.ChangeEvent<HTMLInputElement>) => {checkboxFilter(event, filterQuery[item.filterBy])}}
+								/>
+							</div>
+						</div>
+					)
+				})
+			}
+
+			{/* {dataSort.colors.length > 1 ? 
 				<div className="filters__item">
 					<h4 className="filters__name">Цвет</h4>
 					<div className="filters__checkboxs">
@@ -104,7 +160,7 @@ export const CatalogFilter = ({dataSort}: SortingProps) => {
 						/>
 					</div>
 				</div> : null
-			}
+			} */}
 		</div>
 	);
 };
