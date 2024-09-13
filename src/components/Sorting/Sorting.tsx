@@ -1,7 +1,7 @@
 import { useLocation, useSearchParams } from "react-router-dom";
 import { ISortingData } from "../../types"
 import { useEffect, useState } from "react";
-import CheckboxFilter from "./CheckboxFilter";
+
 
 interface SortingProps {
 	dataSort: ISortingData,
@@ -9,82 +9,16 @@ interface SortingProps {
 
 export const Sorting = ({dataSort}: SortingProps) => {
 
-	const location = useLocation()
-	const [ _, setSearchParams ] = useSearchParams();
-	const [ value, setValue ] = useState<any>({min: dataSort.minCoast, max: dataSort.maxCoast})
-	const queryParams = new URLSearchParams(location.search);
+	// const location = useLocation()
+	// const [ _, setSearchParams ] = useSearchParams();
+	// const [ value, setValue ] = useState<any>({min: dataSort.minCoast, max: dataSort.maxCoast})
+	// const queryParams = new URLSearchParams(location.search);
 
-	useEffect( () =>{
-		setValue({min: dataSort.minCoast, max: dataSort.maxCoast})
-	},[dataSort])
 
-	const filterQuery = {
-		color: 'details.color',
-		memory: 'details.memory',
-		minPrices: 'newPrice_gte',
-		maxPrices: 'newPrice_lte',
-	}
 
-	const onChangeInputMinValue = (event: React.ChangeEvent<HTMLInputElement>) => {
-		if( event.target.value >= value.max ) {
-			console.log('to much')
-
-		}
-		else
-			setValue({min: event.target.value, max: value.max})
-
-	}
-
-	const checkboxFilter = (event: React.ChangeEvent<HTMLInputElement>, filterBy: any) => {
-		if (event.target.checked) {
-			queryParams.set(filterBy, event.target.name)
-			setSearchParams(queryParams)
-		}
-		else
-			queryParams.delete(filterBy)
-			setSearchParams(queryParams)
-	}
-
-	const minMaxPriceFilter = (filterBy: any, data: any) => {
-		if(value.min < dataSort.minCoast || value.min > dataSort.maxCoast ) {
-			queryParams.has(filterBy) ?
-				setValue({...value, min: queryParams.get(filterQuery.minPrices)}) :
-				setValue({...value, min: dataSort.minCoast}) 
-			return
-		} 
-		if(value.max > dataSort.maxCoast || value.max < dataSort.minCoast ) {
-			queryParams.has(filterBy) ?
-				setValue({...value, max: queryParams.get(filterQuery.maxPrices)}) :
-				setValue({...value, max: dataSort.maxCoast}) 
-			return
-		}
-		if(queryParams.has(filterBy)) {
-			queryParams.delete(filterBy)
-			queryParams.append(filterBy, data)
-			setSearchParams(queryParams)
-		}
-		else
-			queryParams.append(filterBy, data)
-			setSearchParams(queryParams)
-	}
 
 	return (
 		<div className="sort">
-
-			{dataSort.colors.length > 1 ? 
-				<CheckboxFilter 
-					checkboxs={dataSort.colors} 
-					sortFn={(event: React.ChangeEvent<HTMLInputElement>) => {checkboxFilter(event, filterQuery.color)}}
-				/>
-				: null
-			}
-			{dataSort.memory.length > 1 ? 
-				<CheckboxFilter 
-					checkboxs={dataSort.memory} 
-					sortFn={(event: React.ChangeEvent<HTMLInputElement>) => {checkboxFilter(event, filterQuery.memory)}}
-				/>
-				: null
-			}
 
 			<div className="sort__main">
 				<button className="btn__open-filteActions
@@ -93,24 +27,7 @@ export const Sorting = ({dataSort}: SortingProps) => {
 						<use xlinkHref="#open-filter"></use>
 					</svg>
 				</button>
-				<div className="sort-price d-none d-lg-flex">
-				<label className="sort-price__range"><span>Цена от</span>
-					<input 
-						type="text" 
-						value={value.min} 
-						onChange={(event)=> {setValue({...value, min: event.target.value })}}
-						onBlur={() => {minMaxPriceFilter(filterQuery.minPrices, value.min)}}
-					/>
-				</label>
-				<label className="sort-price__range"><span>цена до </span>
-					<input 
-						type="text" 
-						onBlur={() => {minMaxPriceFilter(filterQuery.maxPrices, value.max)}}
-						value={value.max} 
-						onChange={(event)=> {setValue({...value, max: event.target.value})}}
-						/>
-				</label>
-				</div><a className="sort-dropdown" href="#" role="button"> 
+				<a className="sort-dropdown" href="#" role="button"> 
 				<div className="sort-dropdown__label">Сортировать</div><span className="bold">Сначала дешевле</span></a>
 				<ul className="dropdown-menu">
 				<li><a className="dropdown-item" href="#">Action</a></li>
@@ -142,6 +59,6 @@ export const Sorting = ({dataSort}: SortingProps) => {
 				</li>
 				</ul>
 			</div>
-			</div>
+		</div>
 	);
 };

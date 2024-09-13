@@ -11,7 +11,7 @@ export const CartItem = ({ item }: CartItemProps) => {
     const sales = useSales(item.product.newPrice, item.product.oldPrice)
 
     return (
-        <div className="cart-item"> 
+        <div className="cart-item">
             <img src={item.product.img[0]} alt=""/>
             <div className="cart-item__title">{item.product.name}</div>
             <div className="cart-item__order">

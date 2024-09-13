@@ -4,6 +4,7 @@ import { CatalogItem, Sorting } from "../index"
 import { Loader } from '../Loader';
 import { ISortingData } from '../../types';
 import { useEffect, useState } from 'react';
+import { CatalogFilter } from '../CatalogFilter';
 
 
 export const CategoriesItems = () => {
@@ -29,18 +30,23 @@ export const CategoriesItems = () => {
                 <Loader /> :
                 <> 
                     <Sorting dataSort={initionalSort}/>
-                    {products?.length ?
-                        <>
-                            <div className='catalog__items'>
-                                {products.map(item => {
-                                    return (
-                                        <CatalogItem product={item} key={item.id}/>
-                                    )
-                                })}
-                            </div>
-                        </> :
-                        <div>Продуктов нет в категории</div>
-                    }
+                    <div className="catalog">
+                        <CatalogFilter dataSort={initionalSort}/>
+                        {products?.length ?
+                            <>
+                                <div className='catalog__items'>
+                                    
+                                    {products.map(item => {
+                                        return (
+                                            <CatalogItem product={item} key={item.id}/>
+                                        )
+                                    })}
+                                </div>
+                            </> :
+                            <div>Продуктов нет в категории</div>
+                        }
+                    </div>
+                    
                 </>
             }
         </div>

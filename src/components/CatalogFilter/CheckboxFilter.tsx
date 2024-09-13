@@ -1,8 +1,7 @@
 import { useState } from "react";
 
 const CheckboxFilter = ({ checkboxs, sortFn }: any) => {
-
-
+    
     const [checked, setChecked] = useState<any>({});
 
 	const onSelectedChange = (event: React.ChangeEvent<HTMLInputElement>, index: any) => {
@@ -17,9 +16,8 @@ const CheckboxFilter = ({ checkboxs, sortFn }: any) => {
 	const disabled = checkedCount >= 1;
 
 
-    return (
-        <div className="filter-checkbox">
-
+    return ( 
+        <>
             {checkboxs.map( (item: any, index:number) => { 
                 return (
                     <label className="page__checkbox" key={index}>
@@ -35,9 +33,7 @@ const CheckboxFilter = ({ checkboxs, sortFn }: any) => {
                     <span>{item}</span>
                 </label>
             )})}
-        </div>
-
-
+        </>
     )
 };
 
