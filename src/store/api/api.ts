@@ -22,7 +22,7 @@ export const apiSlice = createApi({
                     filters: {
                         minCoast: Number(response?.reduce((prev, curr) => prev.newPrice < curr.newPrice ? prev : curr ).newPrice),
                         maxCoast: Number(response?.reduce((prev, curr) => prev.newPrice > curr.newPrice ? prev : curr ).newPrice),
-                        colors: [...new Set(response?.map( item => item.details?.color))],
+                        color: [...new Set(response?.map( item => item.details?.color))],
                         memory: [...new Set(response?.map( item => item.details?.memory))],
                     }
                 }

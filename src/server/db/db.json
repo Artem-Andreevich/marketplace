@@ -82,7 +82,7 @@
 		  "filterBy": "color",
 		  "filterName": "Цвет",
 		  "type": "checkbox",
-		  "value": ["Black", "Blue", "Green", "Pink"]
+		  "value": ["Black", "Blue", "Green", "Pink", "Yellow"]
 		},
 		{
 		  "id": 2,
