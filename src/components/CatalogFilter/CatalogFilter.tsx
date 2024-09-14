@@ -39,13 +39,13 @@ export const CatalogFilter = ({dataSort}: any) => {
 	}
 
 	const minMaxPriceFilter = (filterBy: any, data: any) => {
-		if(value.min < dataSort.minCoast || value.min > dataSort.maxCoast ) {
+		if(value.min > dataSort.maxCoast ) {
 			queryParams.has(filterBy) ?
 				setValue({...value, min: queryParams.get(filterQuery.minPrices)}) :
 				setValue({...value, min: dataSort.minCoast}) 
 			return
 		} 
-		if(value.max > dataSort.maxCoast || value.max < dataSort.minCoast ) {
+		if(value.max < dataSort.minCoast ) {
 			queryParams.has(filterBy) ?
 				setValue({...value, max: queryParams.get(filterQuery.maxPrices)}) :
 				setValue({...value, max: dataSort.maxCoast}) 
@@ -60,6 +60,29 @@ export const CatalogFilter = ({dataSort}: any) => {
 			queryParams.append(filterBy, data)
 			setSearchParams(queryParams)
 	}
+
+	// const minMaxPriceFilter = (filterBy: any, data: any) => {
+	// 	if(value.min < dataSort.minCoast || value.min > dataSort.maxCoast ) {
+	// 		queryParams.has(filterBy) ?
+	// 			setValue({...value, min: queryParams.get(filterQuery.minPrices)}) :
+	// 			setValue({...value, min: dataSort.minCoast}) 
+	// 		return
+	// 	} 
+	// 	if(value.max > dataSort.maxCoast || value.max < dataSort.minCoast ) {
+	// 		queryParams.has(filterBy) ?
+	// 			setValue({...value, max: queryParams.get(filterQuery.maxPrices)}) :
+	// 			setValue({...value, max: dataSort.maxCoast}) 
+	// 		return
+	// 	}
+	// 	if(queryParams.has(filterBy)) {
+	// 		queryParams.delete(filterBy)
+	// 		queryParams.append(filterBy, data)
+	// 		setSearchParams(queryParams)
+	// 	}
+	// 	else
+	// 		queryParams.append(filterBy, data)
+	// 		setSearchParams(queryParams)
+	// }
 
 
 	return (

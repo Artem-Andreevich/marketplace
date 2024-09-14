@@ -91,6 +91,14 @@
 		  "filterName": "Память",
 		  "type": "checkbox",
 		  "value": ["64", "128", "256", "512", "1024"]
+		},
+		{
+			"id": 3,
+			"category": "airpods",
+			"filterBy": "color",
+			"filterName": "Цвет",
+			"type": "checkbox",
+			"value": ["White", "Silver", "Green", "Pink", "Space Gray", "Sky Blue"]
 		}
 	],
 	"products": [
@@ -238,8 +246,8 @@
 			"name": "Apple iPhone 15 512gb Black",
 			"img": ["/images/iphone-15_black.webp", "/images/iphone-15_black_2.webp", "/images/iphone-15_black_3.webp"],
 			"label": "Новинка",
-			"oldPrice": 105000,
-			"newPrice": 95000,
+			"oldPrice": 115490,
+			"newPrice": 104990,
 			"details" : {
 				"color": "Black",
 				"memory": "512"
