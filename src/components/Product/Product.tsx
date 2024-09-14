@@ -108,12 +108,7 @@ export const Product = () => {
                                             </div>
                                         </dl>
                                     </div>
-                                    <div className="product__price price"><a className="price__nds page__menu-link page__dotted" href="#" data-bs-toggle="dropdown" aria-expanded="false">Цена с НДС</a>
-                                        <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                            <li><a className="dropdown-item" href="#">Action</a></li>
-                                            <li><a className="dropdown-item" href="#">Another action</a></li>
-                                            <li><a className="dropdown-item" href="#">Something else here</a></li>
-                                        </ul>
+                                    <div className="product__price price">
                                         <div className="price__old">
                                             <s>{product.oldPrice}</s><span>{sales}%</span>
                                         </div>
