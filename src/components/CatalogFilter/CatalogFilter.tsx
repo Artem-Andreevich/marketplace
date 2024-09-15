@@ -112,6 +112,40 @@ export const CatalogFilter = ({dataSort}: any) => {
 
 			{filters?.map((item): any => {
 				if(item.type === "checkbox")
+		
+					return (
+	
+						<div className="filters__item" key={item.id}>
+							<h4 className="filters__name">{item.filterName}</h4>
+							<div className="filters__checkboxs">
+								{item.value.map((value) => {
+									return (
+										<label className="page__checkbox" key={value}>
+											<input 
+												type="checkbox" 
+												checked={queryParams.has(filterQuery[item.filterBy])}
+												disabled={!dataSort[item.filterBy].includes(value)}
+												name={value} 
+												onChange={(event) => checkboxFilter(event, filterQuery[item.filterBy])}
+											/>
+											<svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 0.253167 0.253167">
+												<rect fill="#ED4300" width="0.253167" height="0.253167" rx="0.0506327" ry="0.0506327"></rect>
+												<polyline fill="none" stroke="white" strokeWidth="0.0253182" strokeLinecap="round" strokeLinejoin="round" points="0.177213,0.0885956 0.113921,0.151887 0.0759509,0.113914 "></polyline>
+											</svg>
+											<span>{value}</span>
+										</label>
+									)
+			
+							
+								})}
+							</div>
+						</div>
+					)
+				})
+			}
+
+			{/* {filters?.map((item): any => {
+				if(item.type === "checkbox")
 					return (
 						<div className="filters__item" key={item.id}>
 							<h4 className="filters__name">{item.filterName}</h4>
@@ -171,7 +205,7 @@ export const CatalogFilter = ({dataSort}: any) => {
 						</div>
 					)
 				})
-			}
+			} */}
 		</div>
 	);
 };

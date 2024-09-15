@@ -4,6 +4,7 @@ import { useActions } from "../../hooks/index"
 import { useSales } from '../../hooks';
 import { IProduct } from '../../types';
 import { useAppSelector } from '../../hooks/useAppSelector';
+import { AddToButton } from '../../ui';
 
 type CatalogItemProps = {
     product: IProduct
@@ -45,6 +46,7 @@ export const CatalogItem = ({ product }: CatalogItemProps ) => {
                 <button className="add-to" type="button">
                     <svg className="icon" width="28px" height="24px"><use xlinkHref="#compare"></use></svg>
                 </button>
+                {/* <AddToButton type={"favorites"} size={}/> */}
             </div>
             <div className='catalog-item__img'>
                 <Link to={`/product/${product.id}`}>

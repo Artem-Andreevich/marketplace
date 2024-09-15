@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { useAppSelector } from '../../hooks/useAppSelector';
 
 
@@ -14,9 +14,9 @@ export function Header() {
 					<div className="header__top__line">
 						<nav>
 							<ul className="header__nav">
-								<li><Link to="/" className="page__menu-link">Главная</Link></li>
-								<li><Link to="categories" className="page__menu-link">Категории</Link></li>
-								<li><Link to="about" className="page__menu-link">О компании</Link></li>
+								<li><NavLink to="/" className="page__menu-link">Главная</NavLink></li>
+								<li><NavLink to="categories" className="page__menu-link">Категории</NavLink></li>
+								<li><NavLink to="about" className="page__menu-link">О компании</NavLink></li>
 								<li><a className="page__menu-link" href="#">Акции и скидки</a></li>
 								<li><a className="page__menu-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Покупателям</a>
 									<ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">

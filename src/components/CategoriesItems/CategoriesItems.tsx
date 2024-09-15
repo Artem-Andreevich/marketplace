@@ -8,21 +8,26 @@ import { CatalogFilter } from '../CatalogFilter';
 export const CategoriesItems = () => {
 
     const { search } = useLocation()
-    const { isLoading, data: data } = useGetProductsByQuery(search)
+    const { isSuccess, data: data, isFetching } = useGetProductsByQuery(search)
+    console.log(isSuccess)
+
 
     return (
         <div className='container'>
-            {isLoading ? 
-                <Loader /> :
+            {isSuccess ? 
                 <> 
                     <Sorting />
                     <div className="catalog">
-                        <CatalogFilter dataSort={data.filters}/>
-                        {data.products?.length ?
+                        {isFetching ? 
+                            <div>
+                                <Loader type="spin" width='50px' height='50px'/>
+                            </div> :
+                            <CatalogFilter dataSort={data?.filters}/> 
+                        }
+                        {data?.products?.length ?
                             <>
                                 <div className='catalog__items'>
-                                    
-                                    {data.products.map((item: any) => {
+                                    {data?.products.map((item: any) => {
                                         return (
                                             <CatalogItem product={item} key={item.id}/>
                                         )
@@ -32,8 +37,10 @@ export const CategoriesItems = () => {
                             <div>Продуктов нет в категории</div>
                         }
                     </div>
-                    
-                </>
+                </> :
+                <div>
+                    <Loader /> 
+                </div> 
             }
         </div>
     );

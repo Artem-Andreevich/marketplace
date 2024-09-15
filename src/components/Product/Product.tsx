@@ -1,10 +1,18 @@
 import { useEffect, useLayoutEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
+import { Swiper, SwiperSlide} from "swiper/react"
+import { Scrollbar } from 'swiper/modules';
+
 import { useGetProductByIdQuery } from "../../store/api/api";
 import { useActions, useSales } from "../../hooks";
 import { Loader } from "../Loader";
 import { ProductChart } from "../ProductChart/ProductChart"
 import { useAppSelector } from "../../hooks/useAppSelector";
+
+
+
+import 'swiper/css'
+import 'swiper/css/scrollbar';
 
 
 export const Product = () => {
@@ -51,9 +59,18 @@ export const Product = () => {
                             <div className="product__inner">
                                 <div className="product__pictures">
                                     <div className="product__img"> 
-                                        {product.img.map( item => 
-                                            <img src={item} alt="" key={item}/>
-                                        )}
+                                        <Swiper 
+                                            slidesPerView={1} 
+                                            scrollbar={{hide: false}}
+                                            modules={[Scrollbar]}
+                                            grabCursor={true}
+                                        >
+                                            {product.img.map( item => 
+                                                <SwiperSlide key={item}>
+                                                    <img src={item} alt="" key={item} loading="lazy"/>
+                                                </SwiperSlide>
+                                            )}
+                                        </Swiper>
                                     </div>
                                     <div className="product__add-to">
                                         <button 
