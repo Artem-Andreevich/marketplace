@@ -9,8 +9,6 @@ import { Loader } from "../Loader";
 import { ProductChart } from "../ProductChart/ProductChart"
 import { useAppSelector } from "../../hooks/useAppSelector";
 
-
-
 import 'swiper/css'
 import 'swiper/css/scrollbar';
 

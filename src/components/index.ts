@@ -7,3 +7,4 @@ export * from "./PopularItems";
 export * from "./Product";
 export * from "./CartItem";
 export * from "./Sorting";
+export * from "./CatalogFilter";
