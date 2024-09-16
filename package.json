@@ -26,6 +26,7 @@
     "swiper": "^11.1.14",
     "typescript": "^5.0.3",
     "typescript-plugin-css-modules": "^5.1.0",
+    "use-react-router-breadcrumbs": "^4.0.1",
     "web-vitals": "^2.1.4"
   },
   "overrides": {

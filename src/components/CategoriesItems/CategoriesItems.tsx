@@ -7,9 +7,9 @@ import { Loader } from '../Loader';
 
 export const CategoriesItems = () => {
 
-    const { search } = useLocation()
-    const { isSuccess, data: data, isFetching } = useGetProductsByQuery(search)
-    console.log(isSuccess)
+    const location = useLocation()
+    const { isSuccess, data: data, isFetching } = useGetProductsByQuery(location.search)
+    console.log(location)
 
     return (
         <div className='container'>

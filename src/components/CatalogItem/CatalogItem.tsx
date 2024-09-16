@@ -49,11 +49,11 @@ export const CatalogItem = ({ product }: CatalogItemProps ) => {
                 {/* <AddToButton type={"favorites"} size={}/> */}
             </div>
             <div className='catalog-item__img'>
-                <Link to={`/product/${product.id}`}>
+                <Link to={`/categories/products/${product.id}`}>
                     <img src={product.img[0]} alt="" />
                 </Link>
             </div>
-            <Link to={`/product/${product.id}`}>
+            <Link to={`/products/${product.id}`}>
                 <h2 className='catalog-item__title' title={product.name}>{product.name}</h2>
             </Link>
 

@@ -1,4 +1,4 @@
-import { AppRouter } from '../routers/AppRouter';
+import { AppRouter } from '../routers';
 import { createPortal } from 'react-dom';
 import { Provider } from "react-redux"
 import { store } from '../store/store';
@@ -11,6 +11,7 @@ import './globalStyles/media.css';
 
 
 export function App() {
+	
 	return (
 		<>
 			{createPortal(
