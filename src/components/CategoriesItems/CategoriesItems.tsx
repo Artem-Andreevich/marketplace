@@ -1,5 +1,5 @@
 import { useGetProductsByQuery } from '../../store/api/api';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useSearchParams } from 'react-router-dom';
 import { CatalogItem, Sorting } from "../index"
 import { CatalogFilter } from '../index';
 import { Loader } from '../Loader';
@@ -9,7 +9,7 @@ export const CategoriesItems = () => {
 
     const location = useLocation()
     const { isSuccess, data: data, isFetching } = useGetProductsByQuery(location.search)
-    console.log(location)
+
 
     return (
         <div className='container'>

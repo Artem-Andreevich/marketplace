@@ -9,10 +9,27 @@ export const Breadcrumbs = () => {
     return (
         <>
         {breadcrumbs.map(({ match, breadcrumb }) => (
-            // console.log(breadcrumb)
-          <NavLink key={match.pathname} to={match.pathname}>
-            {breadcrumb}
-          </NavLink>
+			<NavLink key={match.pathname} to={match.pathname}>
+				{breadcrumb}
+			</NavLink>
+			// !match.route?.props ? 
+			// 	<NavLink key={match.pathname} to={match.pathname}>
+			// 		{breadcrumb}
+			// 	</NavLink> : 
+			// 	<NavLink key={match.pathname} to={{pathname: match.pathname, search: `123`}}>
+			// 		{breadcrumb}
+			// 	</NavLink>
+
+			// <NavLink 
+			// 	key={match.pathname} 
+			// 	to={{
+			// 		pathname: match.pathname,
+			// 		search: match.route?.props ?
+			// 			`${match.route.props.props}` : ''
+			// 	}}
+			// >
+			// 	{breadcrumb}
+			// </NavLink> 
         ))}
       </>
     )

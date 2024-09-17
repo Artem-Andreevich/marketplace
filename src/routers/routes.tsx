@@ -1,14 +1,22 @@
 
 import { AboutPage, MainPage, CategoriesInnerPage, ProductPage, CategoriesPage, CartPage, FavoritesPage} from "../pages"
 import { Layout } from "../hoc"
-import { useGetProductNameByIdQuery } from "../store/api/api";
+import { useGetCategoriesNameByUrlQuery, useGetProductNameByIdQuery } from "../store/api/api";
 
 
 const DynamicProductBreadcrumb = ({ match }: any) => {
     const { data: name} = useGetProductNameByIdQuery(match.params.productID)
     return (<span>{name}</span>)
 }
-    
+
+// const DynamicCategoryBreadcrumb = ({ match }: any) => {
+//     const { data: name } = useGetCategoriesNameByUrlQuery(match.params.categoryID)
+//     console.log(match.params.categoryID)
+//     return (<span>{name}</span>)
+// }
+const DynamicCategoryBreadcrumb = ({ match }: any) => {
+    return match.params.categoryID
+}
 
 export const routes = [
 		{
@@ -38,7 +46,8 @@ export const routes = [
                 {
                     path: 'categories/:categoryID',
                     element: <CategoriesInnerPage />,
-                    breadcrumb: "Айфоны"
+                    props: { props: `category=${'iphoen'}`},
+                    breadcrumb: DynamicCategoryBreadcrumb
                 },
                 {
                     path: 'categories/:categoryID/:productID',

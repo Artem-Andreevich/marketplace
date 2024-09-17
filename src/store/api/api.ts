@@ -45,6 +45,14 @@ export const apiSlice = createApi({
         getCategories: builder.query<ICategories[], void>({
             query: () => `categories`
         }),
+        getCategoriesNameByUrl: builder.query<string, string>({
+            query: (id) => `categories/?url=${id}`,
+            transformResponse: (response: ICategories): string => { 
+                console.log(response)
+
+                return response.name
+            }
+        }),
     })
 });
 
@@ -57,6 +65,7 @@ export const {
     useGetProductsByQuery,
     useGetCategoriesFiltersQuery,
     useGetProductNameByIdQuery,
+    useGetCategoriesNameByUrlQuery,
 } = apiSlice
 
 

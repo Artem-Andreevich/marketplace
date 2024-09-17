@@ -20,6 +20,7 @@ export const Categories = () => {
                                 <li key={item.id} className='category-item'>
                                     <Link 
                                         to={{
+                                            // pathname: isMainPage ? `categories/products` : `products`,
                                             pathname: isMainPage ? `categories/${item.url}` : `${item.url}`,
                                             search: `category=${item.url}`
                                         }} 

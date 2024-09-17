@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useActions } from "../../hooks/index"
 import { useSales } from '../../hooks';
@@ -11,6 +11,11 @@ type CatalogItemProps = {
 }
 
 export const CatalogItem = ({ product }: CatalogItemProps ) => {
+
+    // const location = useLocation()
+	// const [ _, setSearchParams ] = useSearchParams();
+	// const queryParams = new URLSearchParams(location.search);
+    // console.log(queryParams)
 
     const cart  = useAppSelector( state => state.cart)
     const favorites  = useAppSelector( state => state.favorites)
