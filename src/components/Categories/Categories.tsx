@@ -22,7 +22,7 @@ export const Categories = () => {
                                         to={{
                                             // pathname: isMainPage ? `categories/products` : `products`,
                                             pathname: isMainPage ? `categories/${item.url}` : `${item.url}`,
-                                            search: `category=${item.url}`
+                                            // search: `category=${item.url}`
                                         }} 
                                         className='category-item__link'
                                     >

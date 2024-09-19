@@ -9,13 +9,9 @@ const DynamicProductBreadcrumb = ({ match }: any) => {
     return (<span>{name}</span>)
 }
 
-// const DynamicCategoryBreadcrumb = ({ match }: any) => {
-//     const { data: name } = useGetCategoriesNameByUrlQuery(match.params.categoryID)
-//     console.log(match.params.categoryID)
-//     return (<span>{name}</span>)
-// }
 const DynamicCategoryBreadcrumb = ({ match }: any) => {
-    return match.params.categoryID
+    const { data: name } = useGetCategoriesNameByUrlQuery(match.params.categoryID)
+    return (<span>{name}</span>)
 }
 
 export const routes = [
@@ -44,6 +40,7 @@ export const routes = [
                     element: <CategoriesPage />,
                 },
                 {
+                    // path: 'categories/category/:categoryID',
                     path: 'categories/:categoryID',
                     element: <CategoriesInnerPage />,
                     props: { props: `category=${'iphoen'}`},
