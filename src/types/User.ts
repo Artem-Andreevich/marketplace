@@ -1,6 +1,6 @@
-export default interface IUser {
-    email: string,
+export interface IUser {
     id: number,
+    email: string,
     name: string,
     number: number
 }

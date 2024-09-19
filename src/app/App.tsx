@@ -1,27 +1,26 @@
+import { AppRouter } from '../routers';
+import { createPortal } from 'react-dom';
+import { Provider } from "react-redux"
+import { store } from '../store/store';
+import { Svg } from "../layout"
+
 import './globalStyles/bootstrap.min.css';
 import './globalStyles/reset.css';
 import './globalStyles/styles.css';
-import Header from '../layout/Header/Header';
-import { createPortal } from 'react-dom';
-import Svg from '../layout/Portal/Svg';
-import PopularItems from '../components/Popular-items/PopularItems';
+import './globalStyles/media.css';
 
 
-function App() {
-
-
-return (
-	<>
-		{createPortal(
-			<Svg />,
-			document.body
-		)}
-		<main className="page">
-			<Header />
-			<PopularItems />
-		</main>
-	</>
-);
-}
-
-export default App;
+export function App() {
+	
+	return (
+		<>
+			{createPortal(
+				<Svg />,
+				document.body
+			)}
+				<Provider store={store}>
+					<AppRouter />
+				</Provider>
+		</>
+	);
+};
