@@ -61,12 +61,17 @@ export function Header() {
 						</div>
 						<div className="header__control d-none d-lg-block">
 							<ul className="control">
-								<li><a className="control__item active" href="#">
-									<div className="control__icon">
-										<svg className="icon control-icon" width="24px" height="28px">
-											<use xlinkHref="#user"></use>
-										</svg>
-									</div></a></li>
+								<li>
+									<Link to={'admin'} className="control__item">
+										<div className="control__icon">
+											<svg className="icon control-icon" width="24px" height="28px">
+												<use xlinkHref="#user"></use>
+											</svg>
+										</div>
+									</Link>
+				
+									
+									</li>
 								<li>
 									<Link to={"favorites"} className="control__item">
 										<div className="control__icon">

@@ -1,6 +1,7 @@
 import { AboutPage, MainPage, CategoriesInnerPage, ProductPage, CategoriesPage, CartPage, FavoritesPage} from "../pages"
 import { Layout } from "../hoc"
 import { useGetCategoriesNameByUrlQuery, useGetProductNameByIdQuery } from "../store/api/api";
+import { AdminPage } from "../pages/Admin/AdminPage";
 
 
 const DynamicProductBreadcrumb = ({ match }: any) => {
@@ -61,5 +62,15 @@ export const routes = [
                     props: {title: "Избранное"}
                 }
             ]
-		}
+		},
+        {
+            path: 'admin',
+            element: <Layout />,
+            children: [
+                {
+                    index: true,
+                    element: <AdminPage />,
+                }
+            ]
+        }
 	]

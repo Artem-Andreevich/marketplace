@@ -1,11 +1,10 @@
-import { Link, useLocation, useMatch, useMatches, useParams, useSearchParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useActions } from "../../hooks/index"
 import { useSales } from '../../hooks';
 import { IProduct } from '../../types';
 import { useAppSelector } from '../../hooks/useAppSelector';
-import { AddToButton } from '../../ui';
-import { stat } from 'fs';
+
 
 type CatalogItemProps = {
     product: IProduct
@@ -51,10 +50,10 @@ export const CatalogItem = ({ product }: CatalogItemProps ) => {
             </div>
             <div className='catalog-item__img'>
                 <Link to={`/categories/${product.category}/${product.id}`}>
-                    <img src={product.img[0]} alt="" />
+                    <img src={product?.img[0]} alt="" />
                 </Link>
             </div>
-            <Link to={`/products/${product.id}`}>
+            <Link to={`/categories/${product.category}/${product.id}`}>
                 <h2 className='catalog-item__title' title={product.name}>{product.name}</h2>
             </Link>
 

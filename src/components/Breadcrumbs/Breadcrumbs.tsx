@@ -1,6 +1,7 @@
-import { Link, useLocation } from "react-router-dom";
-import useBreadcrumbs  from "use-react-router-breadcrumbs"
+import { Link } from "react-router-dom";
 import { routes } from "../../routers/routes";
+import useBreadcrumbs  from "use-react-router-breadcrumbs"
+
 
 export const Breadcrumbs = () => {
 
@@ -27,7 +28,7 @@ export const Breadcrumbs = () => {
 				</ul>
 				{breadcrumbs.map(({breadcrumb}, index) => (
 					index === breadcrumbs.length - 1 ?
-						<h1 className="page__title">
+						<h1 className="page__title" key={index}>
 							{breadcrumb}
 						</h1> : null
 				))}

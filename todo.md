@@ -15,11 +15,11 @@ TODO:
 [ ] : Сделать компонент для выпадающих элементов
 [x] : Реализовать Favorites
 [ ] : Реализовать Compare
-[ ] : Реализовать <Breadcrumbs/> + page title
+[x] : Реализовать <Breadcrumbs/> + page title
 [ ] : Вынести фильтр инпут по цене в отдельный компонент
 [ ] : Сделать skeleton для продуктов
 [ ] : <CatalogFilters/> Вынести checkbox в отдельный компонент
-[ ] : В <Product/> что то сделать с линками `/products/${product.id}`
+[ ] : В <CatalogItem/> что то сделать с дубль линками `/products/${product.id}`
 
 
 BAGS:

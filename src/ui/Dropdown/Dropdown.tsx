@@ -5,10 +5,11 @@ import { animate, motion, stagger, useInView } from "framer-motion"
 export const Dropdown = ({children}: any) => {
 
     const scope = useRef<HTMLDivElement>(null);
-	const [open, setOpen] = useState(false)
     const isInView = useInView(scope)
     const staggerDropdownItems = stagger(0.1, { startDelay: 0.1 });
-
+	
+	const [open, setOpen] = useState(false)
+	
     useEffect(() => {
 		const handleClickOutside = (event: MouseEvent) => {
 			if (scope.current && !scope.current.contains(event.target as Node)) {
