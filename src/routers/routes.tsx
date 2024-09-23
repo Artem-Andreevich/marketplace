@@ -22,21 +22,25 @@ export const routes = [
                     index: true,
                     element: <MainPage />,
                     breadcrumb: "Главная",
+                    props: {title: "Главная"}
                 },
                 {
                     path: 'about',
                     element: <AboutPage />,
                     breadcrumb: "О нас",
+                    props: {title: "О нас"}
                 },
                 {
                     path: 'categories',
-                    breadcrumb: 'Категории',
                     element: <CategoriesPage />,
+                    breadcrumb: 'Категории',
+                    props: {title: "Категории"}
                 },
                 {
                     path: 'categories/:categoryID',
                     element: <CategoriesInnerPage />,
-                    breadcrumb: DynamicCategoryBreadcrumb
+                    breadcrumb: DynamicCategoryBreadcrumb,
+
                 },
                 {
                     path: 'categories/:categoryID/:productID',
@@ -46,12 +50,15 @@ export const routes = [
                 {
                     path: 'cart',
                     element: <CartPage />,
-                    breadcrumb: "Корзина"
+                    breadcrumb: "Корзина",
+                    props: {title: "Корзина"}
+
                 },
                 {
                     path: 'favorites',
                     element: <FavoritesPage />,
-                    breadcrumb: "Избранное"
+                    breadcrumb: "Избранное",
+                    props: {title: "Избранное"}
                 }
             ]
 		}

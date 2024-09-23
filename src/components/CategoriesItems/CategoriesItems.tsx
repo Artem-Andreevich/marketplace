@@ -9,7 +9,6 @@ export const CategoriesItems = () => {
 
     const { search } = useLocation()
     const { categoryID }: any = useParams()
-    console.log(categoryID)
 	const { isLoading, data: filters } = useGetCategoriesFiltersQuery(categoryID)
     const { isSuccess, data: data, isFetching } = useGetProductsByQuery(search)
 
@@ -17,13 +16,15 @@ export const CategoriesItems = () => {
         <div className='container'>
             {isSuccess ? 
                 <> 
-                    <Sorting />
                     <div className="catalog">
                         {isFetching ? 
                             <div>
                                 <Loader type="spin" width='50px' height='50px'/>
                             </div> :
-                            <CatalogFilter categoryFilters={filters} dataSort={data?.filters}/> 
+                            <div>
+                                <Sorting />
+                                <CatalogFilter categoryFilters={filters} dataSort={data?.filters}/> 
+                            </div>
                         }
                         {data?.products?.length ?
                             <>
