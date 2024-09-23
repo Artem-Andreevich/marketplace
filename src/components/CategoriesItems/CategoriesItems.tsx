@@ -1,5 +1,5 @@
-import { useGetProductsByCategoryNameQuery, useGetProductsByCategoryQuery, useGetProductsByQuery } from '../../store/api/api';
-import { useLocation, useParams, useSearchParams } from 'react-router-dom';
+import { useGetCategoriesFiltersQuery, useGetProductsByQuery } from '../../store/api/api';
+import { useLocation, useParams } from 'react-router-dom';
 import { CatalogItem, Sorting } from "../index"
 import { CatalogFilter } from '../index';
 import { Loader } from '../Loader';
@@ -7,12 +7,11 @@ import { Loader } from '../Loader';
 
 export const CategoriesItems = () => {
 
-    const location = useLocation()
-    const {categoryID}: any = useParams()
-    // const { isSuccess, data: data, isFetching } = useGetProductsByCategoryNameQuery(categoryID)
-    const { isSuccess, data: data, isFetching } = useGetProductsByQuery(location.search)
+    const { search } = useLocation()
+    const { categoryID }: any = useParams()
     console.log(categoryID)
-
+	const { isLoading, data: filters } = useGetCategoriesFiltersQuery(categoryID)
+    const { isSuccess, data: data, isFetching } = useGetProductsByQuery(search)
 
     return (
         <div className='container'>
@@ -24,7 +23,7 @@ export const CategoriesItems = () => {
                             <div>
                                 <Loader type="spin" width='50px' height='50px'/>
                             </div> :
-                            <CatalogFilter dataSort={data?.filters}/> 
+                            <CatalogFilter categoryFilters={filters} dataSort={data?.filters}/> 
                         }
                         {data?.products?.length ?
                             <>

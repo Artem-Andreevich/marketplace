@@ -1,4 +1,3 @@
-
 import { AboutPage, MainPage, CategoriesInnerPage, ProductPage, CategoriesPage, CartPage, FavoritesPage} from "../pages"
 import { Layout } from "../hoc"
 import { useGetCategoriesNameByUrlQuery, useGetProductNameByIdQuery } from "../store/api/api";
@@ -24,11 +23,6 @@ export const routes = [
                     element: <MainPage />,
                     breadcrumb: "Главная",
                 },
-                // {
-                //     path: 'products',
-                //     element: <CategoriesInnerPage />,
-                //     breadcrumb: 'Продукты',
-                // },
                 {
                     path: 'about',
                     element: <AboutPage />,
@@ -40,10 +34,8 @@ export const routes = [
                     element: <CategoriesPage />,
                 },
                 {
-                    // path: 'categories/category/:categoryID',
                     path: 'categories/:categoryID',
                     element: <CategoriesInnerPage />,
-                    props: { props: `category=${'iphoen'}`},
                     breadcrumb: DynamicCategoryBreadcrumb
                 },
                 {
@@ -51,11 +43,6 @@ export const routes = [
                     element: <ProductPage />,
                     breadcrumb: DynamicProductBreadcrumb
                 },
-                // {
-                //     path: 'products/:productID',
-                //     element: <ProductPage />,
-                //     breadcrumb: DynamicProductBreadcrumb
-                // },
                 {
                     path: 'cart',
                     element: <CartPage />,

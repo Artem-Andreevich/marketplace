@@ -39,20 +39,7 @@ export const apiSlice = createApi({
         getProductsByCategory: builder.query<IProduct[], number>({
             query: (id) => `products/?categoriesID=${id}`
         }),
-        getProductsByCategoryName: builder.query<any, string>({
-            query: (name) => `products/?category=${name}`,
-            transformResponse: (response: IProduct[], meta, arg): any => { 
-                return {
-                    products: [...response],
-                    filters: {
-                        minCoast: Number(response?.reduce((prev, curr) => prev.newPrice < curr.newPrice ? prev : curr ).newPrice),
-                        maxCoast: Number(response?.reduce((prev, curr) => prev.newPrice > curr.newPrice ? prev : curr ).newPrice),
-                        color: [...new Set(response?.map( item => item.details?.color))],
-                        memory: [...new Set(response?.map( item => item.details?.memory))],
-                    }
-                }
-            }
-        }),
+
         getProductsByLabel: builder.query<IProduct[], string>({
             query: (label) => `products/?label=${label}`
         }),
@@ -78,7 +65,6 @@ export const {
     useGetCategoriesFiltersQuery,
     useGetProductNameByIdQuery,
     useGetCategoriesNameByUrlQuery,
-    useGetProductsByCategoryNameQuery,
 } = apiSlice
 
 

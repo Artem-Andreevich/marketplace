@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { Swiper, SwiperSlide} from "swiper/react"
 import { Scrollbar } from 'swiper/modules';
 
-import { useGetProductByIdQuery, useGetProductNameByIdQuery } from "../../store/api/api";
+import { useGetProductByIdQuery } from "../../store/api/api";
 import { useActions, useSales } from "../../hooks";
 import { Loader } from "../Loader";
 import { ProductChart } from "../ProductChart/ProductChart"

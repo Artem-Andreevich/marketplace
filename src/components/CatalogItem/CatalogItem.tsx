@@ -1,21 +1,17 @@
-import { Link, useLocation, useSearchParams } from 'react-router-dom';
+import { Link, useLocation, useMatch, useMatches, useParams, useSearchParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useActions } from "../../hooks/index"
 import { useSales } from '../../hooks';
 import { IProduct } from '../../types';
 import { useAppSelector } from '../../hooks/useAppSelector';
 import { AddToButton } from '../../ui';
+import { stat } from 'fs';
 
 type CatalogItemProps = {
     product: IProduct
 }
 
 export const CatalogItem = ({ product }: CatalogItemProps ) => {
-
-    // const location = useLocation()
-	// const [ _, setSearchParams ] = useSearchParams();
-	// const queryParams = new URLSearchParams(location.search);
-    // console.log(queryParams)
 
     const cart  = useAppSelector( state => state.cart)
     const favorites  = useAppSelector( state => state.favorites)
@@ -54,7 +50,7 @@ export const CatalogItem = ({ product }: CatalogItemProps ) => {
                 {/* <AddToButton type={"favorites"} size={}/> */}
             </div>
             <div className='catalog-item__img'>
-                <Link to={`/categories/products/${product.id}`}>
+                <Link to={`/categories/${product.category}/${product.id}`}>
                     <img src={product.img[0]} alt="" />
                 </Link>
             </div>

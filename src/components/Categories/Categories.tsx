@@ -6,7 +6,7 @@ import { Loader } from '../Loader';
 export const Categories = () => {
 
     const location = useLocation()
-    const isMainPage = location.pathname === '/'
+    const isCategories = location.pathname === '/categories'
     const { isLoading, data: categories} = useGetCategoriesQuery()
 
     return (
@@ -20,9 +20,8 @@ export const Categories = () => {
                                 <li key={item.id} className='category-item'>
                                     <Link 
                                         to={{
-                                            // pathname: isMainPage ? `categories/products` : `products`,
-                                            pathname: isMainPage ? `categories/${item.url}` : `${item.url}`,
-                                            // search: `category=${item.url}`
+                                            pathname: !isCategories ? `categories/${item.url}` : `${item.url}`,
+                                            search: `category=${item.url}`,
                                         }} 
                                         className='category-item__link'
                                     >
