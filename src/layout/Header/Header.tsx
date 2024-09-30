@@ -62,7 +62,7 @@ export function Header() {
 						<div className="header__control d-none d-lg-block">
 							<ul className="control">
 								<li>
-									<Link to={'admin'} className="control__item">
+									<Link to={'auth'} className="control__item">
 										<div className="control__icon">
 											<svg className="icon control-icon" width="24px" height="28px">
 												<use xlinkHref="#user"></use>
@@ -82,13 +82,16 @@ export function Header() {
 										</div>
 									</Link>
 								</li>
-								<li><a className="control__item" href="#">
-									<div className="control__icon">
-										<svg className="icon control-icon" width="28px" height="24px">
-											<use xlinkHref="#compare"></use>
-										</svg>
-										<span className="control__label"></span>
-									</div></a></li>
+								<li>
+									<Link to={'admin'} className="control__item">
+										<div className="control__icon">
+											<svg className="icon control-icon" width="28px" height="24px">
+												<use xlinkHref="#compare"></use>
+											</svg>
+											<span className="control__label"></span>
+										</div>
+									</Link>
+								</li>
 								<li>
 									<Link to={'/cart'} className="control__item">
 										<div className="control__icon">

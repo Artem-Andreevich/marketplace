@@ -1,4 +1,4 @@
-import { AboutPage, MainPage, CategoriesInnerPage, ProductPage, CategoriesPage, CartPage, FavoritesPage} from "../pages"
+import { AboutPage, MainPage, CategoriesInnerPage, ProductPage, CategoriesPage, CartPage, FavoritesPage, AuthPage, RegisterPage} from "../pages"
 import { Layout } from "../hoc"
 import { useGetCategoriesNameByUrlQuery, useGetProductNameByIdQuery } from "../store/api/api";
 import { AdminPage } from "../pages/Admin/AdminPage";
@@ -60,6 +60,14 @@ export const routes = [
                     element: <FavoritesPage />,
                     breadcrumb: "Избранное",
                     props: {title: "Избранное"}
+                },
+                {
+                    path: 'auth',
+                    element: <AuthPage />,
+                },
+                {
+                    path: 'register',
+                    element: <RegisterPage />,
                 }
             ]
 		},

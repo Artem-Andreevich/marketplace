@@ -5,3 +5,5 @@ export * from "./MainPage";
 export * from "./ProductPage";
 export * from "./CartPage";
 export * from "./FavoritesPage";
+export * from "./AuthPage";
+export * from "./RegisterPage";
